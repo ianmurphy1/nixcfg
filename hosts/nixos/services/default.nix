@@ -1,0 +1,4 @@
+{ myvars }:
+{
+  imports = (myvars.scanPaths ./.);
+}
