@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, lib, ... }:
 let
   myvim = ((pkgs.vim-full.override {}).customize {
     vimrcConfig.packages.packages = with pkgs.vimPlugins; {
@@ -13,10 +13,14 @@ let
         rust-vim
         coc-nvim
         vim-terraform
-        gitgutter        
       ];
     };
-    
+    # Proper VIM loading seems to be borked
+    # with this so source main vimrc file
+    # from here
+    vimrcConfig.customRC = ''
+      source ~/.vim/vimrc
+    '';
   });
 in
   {

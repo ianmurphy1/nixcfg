@@ -1,8 +1,8 @@
-{ ... }:
+{ config, ... }:
 {
   programs.nh = {
     enable = true;
-    flake = builtins.toString ../../..;
+    flake = "${config.users.users.ian.home}/nixcfg";
     clean = {
       enable = true;
       dates = "weekly";

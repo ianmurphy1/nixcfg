@@ -2,7 +2,7 @@
 { config, pkgs, ... }:
 
 let
-  nixosConfig = builtins.toString ../../../.;
+  nixosConfig = "${config.users.users.ian.home}/nixcfg";
 in
 {
   sops.secrets.vault_token = {
@@ -26,7 +26,7 @@ in
     };
     interactiveShellInit = ''
       source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
-      eval $(${pkgs.zoxide}/bin/zoxide init --cmd cd)
+      eval $(${pkgs.zoxide}/bin/zoxide init zsh --cmd cd)
     '';
     shellInit = ''
       export VAULT_TOKEN="$(cat ${config.sops.secrets.vault_token.path})"
