@@ -1,6 +1,6 @@
 {pkgs, ...}:
 let
-  vim = ((pkgs.vim-full.override {}).customize {
+  myvim = ((pkgs.vim-full.override {}).customize {
     vimrcConfig.packages.packages = with pkgs.vimPlugins; {
       start = [
         vim-nix
@@ -9,7 +9,7 @@ let
         vim-airline
         vim-airline-themes
         nerdtree
-        vim-go
+        #vim-go
         rust-vim
         coc-nvim
         vim-terraform
@@ -20,7 +20,11 @@ let
   });
 in
   {
-    environment.systemPackages = [ vim ];
+    environment.systemPackages = with pkgs; [
+      myvim
+      nodejs_22 # Required by coc-nvim
+      nixd #LSP server for nix
+    ];
     environment.sessionVariables = {
       EDITOR = "vim";
     };

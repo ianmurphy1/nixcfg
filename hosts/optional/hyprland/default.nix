@@ -24,5 +24,11 @@
     waybar
     wl-clipboard
     nwg-displays
+    nwg-look
+    brightnessctl
+    acpi
+    blueman
+    adwaita-qt6
+
   ];
 }

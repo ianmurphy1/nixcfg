@@ -1,17 +1,17 @@
-{ config, pkgs, inputs, myvars, ...}:
+{ config, pkgs, inputs, lib, outputs, myvars, ...}:
 
 let
   username = myvars.username;
   secretspath = builtins.toString inputs.mysecrets;
 in
 {
-  imports = [
+  imports = lib.flatten [
+    ./services
     ./hardware-configuration.nix
     ./system.nix
     inputs.sops-nix.nixosModules.sops
     ../common
-    ../optional/hyprland
-    ../optional/firefox
+    (myvars.scanPaths ../optional)
   ];
 
   sops = {
@@ -37,6 +37,18 @@ in
       "video"
       "input"
     ];
+    shell = pkgs.zsh;
+  };
+
+  programs.ssh = {
+    startAgent = true;
+  };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -44,5 +56,24 @@ in
     zsh
     curl
     wget
+    intel-media-driver
   ];
+
+  nix = {
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      trusted-users = [ "root" "ian" "@wheel" ];
+      auto-optimise-store = true;
+    };
+    optimise.automatic = true;
+  };
+
+
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    config = {
+      allowUnfree = true;
+    };
+  };
 }

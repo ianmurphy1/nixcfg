@@ -1,4 +1,7 @@
 { lib, inputs, myvars, ... }:
+let
+  username = myvars.username;
+in
 {
   imports = lib.flatten [
     inputs.home-manager.nixosModules.home-manager
@@ -7,7 +10,7 @@
 
   home-manager = {
     users = {
-      "${myvars.username}" = ../../configs/${myvars.username};
+      "${username}" = ../../home/${username};
     };
   };
 }

@@ -2,7 +2,7 @@
 { config, pkgs, ... }:
 
 let
-  nixosConfig = "${config.users.users.ian.home}/nixos-config";
+  nixosConfig = builtins.toString ../../../.;
 in
 {
   sops.secrets.vault_token = {
