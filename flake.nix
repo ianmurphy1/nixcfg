@@ -29,12 +29,14 @@
         config.allowUnfree = true;
       };
       lib = nixpkgs.lib;
-      myvars = import ./vars { inherit lib; };
+      myvars = import ./vars { };
+      mylib = import ./lib { inherit lib; };
       specialArgs = {
         inherit
           inputs
           outputs
           pkgs
+          mylib
           myvars;
       };
 

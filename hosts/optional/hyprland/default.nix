@@ -23,12 +23,12 @@
     qt6.qtwayland
     waybar
     wl-clipboard
+    cliphist
     nwg-displays
     nwg-look
     brightnessctl
     acpi
     blueman
     adwaita-qt6
-
   ];
 }

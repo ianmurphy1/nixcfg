@@ -3,6 +3,7 @@ let
   myvim = ((pkgs.vim-full.override {}).customize {
     vimrcConfig.packages.packages = with pkgs.vimPlugins; {
       start = [
+        vim-fugitive
         vim-nix
         gitgutter
         jellybeans-vim
@@ -33,4 +34,3 @@ in
       EDITOR = "vim";
     };
   }
-

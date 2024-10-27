@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, myvars, ...}:
+{ mylib, ...}:
 {
-  imports = (myvars.scanPaths ./.);
+  imports = (mylib.scanPaths ./.);
 }

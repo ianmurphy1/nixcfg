@@ -1,11 +1,11 @@
-{ lib, inputs, myvars, ... }:
+{ lib, inputs, myvars, mylib, ... }:
 let
   username = myvars.username;
 in
 {
   imports = lib.flatten [
     inputs.home-manager.nixosModules.home-manager
-    (myvars.scanPaths ./.)
+    (mylib.scanPaths ./.)
   ];
 
   home-manager = {

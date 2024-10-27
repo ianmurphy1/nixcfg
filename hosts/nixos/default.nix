@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, outputs, myvars, ...}:
+{ config, pkgs, inputs, lib, outputs, myvars, mylib, ...}:
 
 let
   username = myvars.username;
@@ -6,12 +6,12 @@ let
 in
 {
   imports = lib.flatten [
+    inputs.sops-nix.nixosModules.sops
     ./services
     ./hardware-configuration.nix
     ./system.nix
-    inputs.sops-nix.nixosModules.sops
     ../common
-    (myvars.scanPaths ../optional)
+    (mylib.scanPaths ../optional)
   ];
 
   sops = {
@@ -38,6 +38,15 @@ in
       "input"
     ];
     shell = pkgs.zsh;
+  };
+
+  # Create directories for vim to store its temp files
+  systemd.user.tmpfiles = {
+    #Type Path        Mode User Group Age Argument…
+    rules = [
+      "d /home/${username}/.vimextra/swap 0755 ${username} users - -"
+      "d /home/${username}/.vimextra/backup 0755 ${username} users - -"
+    ];
   };
 
   programs.ssh = {

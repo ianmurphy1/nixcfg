@@ -4,6 +4,16 @@ else
 	set term=xterm-256color
 endif
 
+"
+"
+" These dirs are created by systemds tmpfiles
+" creation of these hasn't been implemented on
+" mac yet so expect errors
+"
+"
+set backupdir=~/.vimextra/backup//
+set directory=~/.vimextra/swap//
+
 set nocompatible 
 filetype plugin indent on
 set backspace=indent,eol,start
@@ -87,8 +97,6 @@ map <Space> <Leader>
 
 set updatetime=400
 set splitright
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
 set tabstop=4
 set shiftwidth=4
 
@@ -103,6 +111,7 @@ autocmd FileType python setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 augroup filetypedetect
     autocmd BufNew,BufNewFile,BufRead *.tofu :setfiletype terraform
+    autocmd BufNew,BufNewFile,BufRead *.jsonc :setfiletype json
 augroup END
 
 map <silent> <C-o> :NERDTreeToggle<CR>

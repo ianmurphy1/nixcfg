@@ -1,8 +1,8 @@
-{ config, pkgs, lib, inputs, myvars, ...}:
+{ pkgs, lib, myvars, mylib, ...}:
 {
   imports = lib.flatten [
     ../../configs/${myvars.username}
-    (myvars.scanPaths ./.)
+    (mylib.scanPaths ./.)
   ];
 
   home = {

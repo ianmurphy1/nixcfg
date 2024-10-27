@@ -1,5 +1,5 @@
-{ myvars, ... }:
+{ mylib, ... }:
 {
-  imports = (myvars.scanPaths ./.);
+  imports = (mylib.scanPaths ./.);
   
 }
