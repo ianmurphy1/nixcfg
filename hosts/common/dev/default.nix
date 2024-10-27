@@ -12,8 +12,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    devenv
-    nixos-generators
+    devenv just
+    nixos-generators git-filter-repo
     awscli2
     kubectl
     kustomize

@@ -1,4 +1,4 @@
-{ pkgs, inputs, myvars, ... }:
+{ pkgs, ... }:
 
 {
   boot = {

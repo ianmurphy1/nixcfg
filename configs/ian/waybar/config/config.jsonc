@@ -45,9 +45,9 @@
     "rewrite": {
       "(firefox)@@@(.*) — Mozilla Firefox.*": "  $2",
       "firefox@@@Mozilla Firefox.*": "  firefox",
-      "(kitty)@@@(.*)": " $2",
-      //"(kitty)@@@vim (.*)": " $2",
-      //"(kitty)@@@(?!vim)(.*)": "  $2",
+      //"(kitty)@@@(.*)": " $2",
+      "(kitty)@@@vim (.*)": " $2",
+      "(kitty)@@@(?!vim)(.*)": "  $2",
       "@@@": ""        
     }
   },
@@ -87,9 +87,9 @@
   },
   "backlight": {
     // "device": "acpi_video1",
-    "format": " {percent}%",
-    //"format": "{icon} {percent}%",
-    //"format-icons": ["", "", "", "", "", "", "", "", ""]
+    //"format": " {percent}%",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
   "battery": {
     "states": {

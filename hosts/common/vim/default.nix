@@ -1,19 +1,19 @@
-{pkgs, lib, ... }:
+{pkgs, ... }:
 let
   myvim = ((pkgs.vim-full.override {}).customize {
     vimrcConfig.packages.packages = with pkgs.vimPlugins; {
       start = [
-        vim-fugitive
+        vim-fugitive vim-just
         vim-nix
         gitgutter
         jellybeans-vim
         vim-airline
         vim-airline-themes
-        nerdtree
-        #vim-go
+        nerdtree vim-nerdtree-syntax-highlight
         rust-vim
         coc-nvim
         vim-terraform
+        vim-devicons
       ];
     };
     # Proper VIM loading seems to be borked

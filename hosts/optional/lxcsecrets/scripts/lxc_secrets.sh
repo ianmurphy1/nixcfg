@@ -4,8 +4,8 @@ APP=${APP?undefined}
 SECRETS_DIR="/home/ian/dev/secrets/sops"
 
 # Remove existing SSH key from known_hosts file
-# ssh config is setup to accept new keys from
-# 192.168.1.46/24 IPs
+# SSH config is setup to accept new keys from
+# 192.168.1.1/24 Subnet
 sed -i "/^${IP}/d" ~/.ssh/known_hosts
 
 AGE_KEY=$(ssh -T root@${IP} <<EOL

@@ -7,6 +7,7 @@
       font-awesome_5
       noto-fonts
       powerline-fonts
+      (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
     ];
   };
 }

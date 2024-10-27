@@ -42,7 +42,7 @@ in
 
   # Create directories for vim to store its temp files
   systemd.user.tmpfiles = {
-    #Type Path        Mode User Group Age Argument…
+    #Type Path Mode User Group Age Argument…
     rules = [
       "d /home/${username}/.vimextra/swap 0755 ${username} users - -"
       "d /home/${username}/.vimextra/backup 0755 ${username} users - -"
