@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/env/bin bash
 case $(rofi -dmenu -L 6 -l 3 -W 100 -x -100 -y 10 \
     -D dynamic_lines=true << EOF | sed 's/^ *//'
     Shutdown

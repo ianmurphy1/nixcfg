@@ -46,7 +46,7 @@
           inherit specialArgs;
           modules = [
             { networking.hostName = hostname; }
-            home-manager.nixosModules.home-manager
+            home-manager.nixosModules.default
             { home-manager.extraSpecialArgs = specialArgs; }
             ./hosts/${hostname}
           ];

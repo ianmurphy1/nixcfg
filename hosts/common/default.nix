@@ -1,4 +1,4 @@
-{ lib, inputs, myvars, mylib, ... }:
+{ lib, inputs, outputs, myvars, mylib, ... }:
 let
   username = myvars.username;
 in
@@ -12,5 +12,6 @@ in
     users = {
       "${username}" = ../../home/${username};
     };
+    extraSpecialArgs = { inherit inputs outputs; };
   };
 }

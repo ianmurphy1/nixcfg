@@ -3,7 +3,6 @@
   ...
 }:
 {
-
   security = {
     pki = {
       certificateFiles = [

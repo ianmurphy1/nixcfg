@@ -14,6 +14,7 @@ in
     (mylib.scanPaths ../optional)
   ];
 
+  # Init sops-nix here and use secrets wherever they're needed
   sops = {
     age = {
       keyFile = "${config.users.users."${username}".home}/.config/sops/age/keys.txt";
@@ -24,7 +25,6 @@ in
         neededForUsers = true;
       };
     };
-    
   };
 
   users.users.${username} = {

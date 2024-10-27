@@ -1,8 +1,6 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  /* font-family: "Noto Sans Mono", "Font Awesome 6 Free Solid", "Font Awesome 6 Free";*/
   font-family: NotoSansMono, "Font Awesome 6 Free Solid", SourceCodePro, sans-serif;
-  /* font-family: "Noto Sans Mono", "Font Awesome 6 Free", "Font Awesome 6"; */
   font-size: 18px;
   min-height: 0;
   border: none;
