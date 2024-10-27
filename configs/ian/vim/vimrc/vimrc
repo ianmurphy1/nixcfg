@@ -178,3 +178,4 @@ nnoremap <silent> <C-n> :call NumberToggle()<CR>
 
 source ~/.vim/coc-settings.vim
 source ~/.vim/coc-extensions.vim
+source ~/.vim/nerdtee-icons.vim
