@@ -1,7 +1,7 @@
 if &term == "xterm-kitty"
-	set term=kitty
+  set term=kitty
 else
-	set term=xterm-256color
+  set term=xterm-256color
 endif
 
 "
@@ -29,9 +29,9 @@ if !exists("g:os")
   endif
 endif
 if has("mouse_sgr")
-    set ttymouse=sgr
+  set ttymouse=sgr
 else
-    set ttymouse=xterm2
+  set ttymouse=xterm2
 end
 set mouse=a
 let NERDTreeShowHidden=1
@@ -106,12 +106,13 @@ autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType sql setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType vim setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType go setlocal shiftwidth=4 tabstop=4 expandtab
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 noexpandtab
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
 
 augroup filetypedetect
-    autocmd BufNew,BufNewFile,BufRead *.tofu :setfiletype terraform
-    autocmd BufNew,BufNewFile,BufRead *.jsonc :setfiletype json
+  autocmd BufNew,BufNewFile,BufRead *.tofu :setfiletype terraform
+  autocmd BufNew,BufNewFile,BufRead *.jsonc :setfiletype json
 augroup END
 
 map <silent> <C-o> :NERDTreeToggle<CR>
@@ -123,9 +124,9 @@ let g:sql_set_type_default = 'pgsql'
 :set number relativenumber
 
 :augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+  :  autocmd!
+  :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
 noremap <Leader>y "*y
@@ -150,32 +151,32 @@ let g:linuxsty_patterns = [ "/home/ian/dev/kernel" ]
 let g:vimtex_compiler_method = "latexmk"
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_latexmk = {
-        \ 'aux_dir' : '',
-        \ 'out_dir' : '',
-        \ 'callback' : 1,
-        \ 'continuous' : 1,
-        \ 'executable' : 'latexmk',
-        \ 'hooks' : [],
-        \ 'options' : [
-        \   '-xelatex',
-        \   '-verbose',
-        \   '-file-line-error',
-        \   '-synctex=1',
-        \   '-interaction=nonstopmode',
-        \ ],
-        \}
+      \ 'aux_dir' : '',
+      \ 'out_dir' : '',
+      \ 'callback' : 1,
+      \ 'continuous' : 1,
+      \ 'executable' : 'latexmk',
+      \ 'hooks' : [],
+      \ 'options' : [
+      \   '-xelatex',
+      \   '-verbose',
+      \   '-file-line-error',
+      \   '-synctex=1',
+      \   '-interaction=nonstopmode',
+      \ ],
+      \}
 
 " Toggle hybrid or absolute number lines
 function! NumberToggle()
-    if(&rnu == 1)
-        set nornu
-    else
-        set rnu
-    endif
+  if(&rnu == 1)
+  set nornu
+  else
+    set rnu
+  endif
 endfunction
 
 nnoremap <silent> <C-n> :call NumberToggle()<CR>
 
 source ~/.vim/coc-settings.vim
 source ~/.vim/coc-extensions.vim
-source ~/.vim/nerdtee-icons.vim
+source ~/.vim/nerdtree-icons.vim

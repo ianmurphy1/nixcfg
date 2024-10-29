@@ -126,7 +126,7 @@
       //            "phone": "",
       //            "portable": "",
       //            "car": "",
-      "default": ["", "", ""]
+      "default": [" ", " ", " "]
     },
     "on-click": "pamixer -t",
     "on-scroll-up": "pamixer -i 5",
