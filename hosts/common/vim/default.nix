@@ -11,7 +11,6 @@ let
         vim-airline-themes
         nerdtree vim-nerdtree-syntax-highlight
         rust-vim
-        coc-nvim
         vim-terraform
         vim-devicons
       ];
@@ -27,8 +26,6 @@ in
   {
     environment.systemPackages = with pkgs; [
       myvim
-      nodejs_22 # Required by coc-nvim
-      nixd #LSP server for nix
     ];
     environment.sessionVariables = {
       EDITOR = "vim";

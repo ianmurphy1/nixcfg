@@ -53,6 +53,13 @@ endfunction
 " Highlight the symbol and its references when holding the cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Mapping for removing InlayHints
+function! ToggleHints()
+  call CocActionAsync('runCommand', 'document.toggleInlayHint')
+endfunction
+
+nmap <silent> <C-h> :call ToggleHints()<CR>
+
 " Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
 
