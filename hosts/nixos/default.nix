@@ -74,10 +74,10 @@ in
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "ian" "@wheel" ];
       auto-optimise-store = true;
+      warn-dirty = false;
     };
     optimise.automatic = true;
   };
-
 
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;

@@ -4,9 +4,9 @@
   # Enable Theme
   environment.variables.GTK_THEME = "catppuccin-latte-dark";
   environment.variables.XCURSOR_THEME = "Catppuccin-Latte-Dark";
-  environment.variables.XCURSOR_SIZE = "30";
+  environment.variables.XCURSOR_SIZE = "26";
   environment.variables.HYPRCURSOR_THEME = "catppuccin-latte-dark-cursors";
-  environment.variables.HYPRCURSOR_SIZE = "28";
+  environment.variables.HYPRCURSOR_SIZE = "26";
   console = {
     earlySetup = true;
   };

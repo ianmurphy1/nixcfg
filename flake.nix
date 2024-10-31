@@ -42,12 +42,14 @@
 
       mkSystem = pkgs: system: hostname:
         pkgs.lib.nixosSystem {
-          system = system;
-          inherit specialArgs;
+          inherit system specialArgs;
           modules = [
             { networking.hostName = hostname; }
             home-manager.nixosModules.default
-            { home-manager.extraSpecialArgs = specialArgs; }
+            {
+              home-manager.extraSpecialArgs = specialArgs; 
+              home-manager.useGlobalPkgs = true;
+            }
             ./hosts/${hostname}
           ];
         };

@@ -53,7 +53,8 @@ endfunction
 " Highlight the symbol and its references when holding the cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Mapping for removing InlayHints
+" Mapping for toggling InlayHints
+" They're off by default
 function! ToggleHints()
   call CocActionAsync('runCommand', 'document.toggleInlayHint')
 endfunction

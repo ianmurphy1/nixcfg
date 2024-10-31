@@ -37,6 +37,7 @@ in
       plugins = [
         "git"
         "direnv"
+        "rust"
       ];
     };
   };

@@ -7,10 +7,9 @@ let g:DevIconsEnableFoldersOpenClose = 1
 "
 "" you can add these colors to your .vimrc to help customizing
 let s:blue = "689FB6"
-""let s:nixblue = '9ec1fa'
 let s:git_orange = 'F54D27'
 "let s:nix_blue = '6DA2F8'
-let s:nix_blue = '5fafd7'
+let s:nix_blue = '5FAFD7'
 
 
 " Exact matching extensions

@@ -12,5 +12,6 @@
         }
       }
     }
-  }
+  },
+  "inlayHint.display": false
 }

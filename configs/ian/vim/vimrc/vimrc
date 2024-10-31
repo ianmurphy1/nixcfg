@@ -75,12 +75,15 @@ endif
 let g:airline_symbols.space="\ua0"
 let g:airline_skip_empty_sections=1
 let g:Powerline_symbols ='fancy'
-let g:airline_theme='jellybeans'
 set encoding=utf-8
 set t_Co=256
 set termencoding=utf-8
 set laststatus=2
+"let g:gruvbox_contrast_dark = 'hard'
+"colorscheme gruvbox
+"let g:airline_theme='gruvbox'
 colorscheme jellybeans
+let g:airline_theme='jellybeans'
 
 " Disable arrows for navigation
 no <down> ddp
@@ -108,7 +111,7 @@ autocmd FileType sql setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType vim setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType go setlocal shiftwidth=4 tabstop=4 expandtab
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 augroup filetypedetect
   autocmd BufNew,BufNewFile,BufRead *.tofu :setfiletype terraform
@@ -178,3 +181,5 @@ endfunction
 nnoremap <silent> <C-n> :call NumberToggle()<CR>
 
 source ~/.vim/nerdtree-icons.vim
+source ~/.vim/coc-settings.vim
+source ~/test.vim
