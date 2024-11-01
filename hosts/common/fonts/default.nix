@@ -1,14 +1,4 @@
 { pkgs, ... }:
-let
-  nfs = (
-    pkgs.nerdfonts.override {
-      fonts = [
-        "SourceCodePro"
-        "Noto"
-      ];
-    }
-  );
-in
 {
   fonts = {
     packages = with pkgs; [
@@ -16,7 +6,7 @@ in
       font-awesome
       font-awesome_5
       powerline-fonts
-      nfs
+      nerdfonts
     ];
   };
 }

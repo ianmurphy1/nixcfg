@@ -24,13 +24,16 @@
     let
       inherit (self) outputs;
       system = "x86_64-linux";
-      pkgs = import nixpkgs { 
-        system = system;
-        config.allowUnfree = true;
-      };
+
       lib = nixpkgs.lib;
       myvars = import ./vars { };
       mylib = import ./lib { inherit lib; };
+      overlays = import ./overlays;
+      pkgs = import nixpkgs { 
+        system = system;
+        config.allowUnfree = true;
+        inherit overlays;
+      };
       specialArgs = {
         inherit
           inputs

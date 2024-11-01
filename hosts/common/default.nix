@@ -1,4 +1,4 @@
-{ lib, pkgs, inputs, outputs, myvars, mylib, ... }:
+{ lib, inputs, outputs, myvars, mylib, ... }:
 let
   username = myvars.username;
 in

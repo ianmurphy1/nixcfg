@@ -1,8 +1,11 @@
-{ config, ... }:
+{ config, myvars, ... }:
+let
+  homedir = config.users.users."${myvars.username}".home;
+in
 {
   programs.nh = {
     enable = true;
-    flake = "${config.users.users.ian.home}/nixcfg";
+    flake = "${homedir}/nixcfg";
     clean = {
       enable = true;
       dates = "weekly";

@@ -1,8 +1,11 @@
 { config, pkgs, inputs, lib, outputs, myvars, mylib, ...}:
 
 let
-  username = myvars.username;
   secretspath = builtins.toString inputs.mysecrets;
+  username = myvars.username;
+  user = config.users.users."${username}";
+  usergroup = user.group;
+  homedir = user.home;
 in
 {
   imports = lib.flatten [
@@ -17,7 +20,7 @@ in
   # Init sops-nix here and use secrets wherever they're needed
   sops = {
     age = {
-      keyFile = "${config.users.users."${username}".home}/.config/sops/age/keys.txt";
+      keyFile = "${homedir}/.config/sops/age/keys.txt";
     };
     defaultSopsFile = "${secretspath}/${config.networking.hostName}.secrets.yaml";
     secrets = {
@@ -44,8 +47,8 @@ in
   systemd.user.tmpfiles = {
     #Type Path Mode User Group Age Argument…
     rules = [
-      "d /home/${username}/.vimextra/swap 0755 ${username} users - -"
-      "d /home/${username}/.vimextra/backup 0755 ${username} users - -"
+      "d /home/${username}/.vimextra/swap 0755 ${username} ${usergroup} - -"
+      "d /home/${username}/.vimextra/backup 0755 ${username} ${usergroup} - -"
     ];
   };
 
@@ -72,7 +75,7 @@ in
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
-      trusted-users = [ "root" "ian" "@wheel" ];
+      trusted-users = [ "root" "${username}" "@wheel" ];
       auto-optimise-store = true;
       warn-dirty = false;
     };
@@ -80,7 +83,6 @@ in
   };
 
   nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
     config = {
       allowUnfree = true;
     };

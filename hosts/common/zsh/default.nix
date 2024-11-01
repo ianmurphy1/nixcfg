@@ -33,7 +33,7 @@ in
     '';
     ohMyZsh = {
       enable = true;
-      theme = "avit";
+      theme = "robbyrussell";
       plugins = [
         "git"
         "direnv"
