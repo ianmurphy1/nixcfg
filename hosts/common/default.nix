@@ -1,6 +1,7 @@
-{ lib, inputs, outputs, myvars, mylib, ... }:
+{ config, lib, inputs, outputs, myvars, mylib, ... }:
 let
   username = myvars.username;
+  hostname = config.networking.hostName;
 in
 {
   imports = lib.flatten [
@@ -10,7 +11,7 @@ in
 
   home-manager = {
     users = {
-      "${username}" = ../../home/${username};
+      "${username}" = ../../home/${username}/${hostname}.nix;
     };
     extraSpecialArgs = { inherit inputs outputs; };
   };

@@ -35,7 +35,7 @@
     in {
       nixosConfigurations = {
         #nixos = mkSystem inputs.nixpkgs "x86_64-linux" "nixos";
-        nixos = mkSystem2 "nixos" {
+        nixos = mkSystem2 "nixos" rec {
           system = "x86_64-linux";
         };
       };
