@@ -10,9 +10,11 @@ let
 in
 {
   imports = [
-    ../packages
+    ./packages
     ../common/vim
     ../common/kitty
+    ../common/fonts
+    ../common/cli
     inputs.home-manager.darwinModules.home-manager
   ];
 
