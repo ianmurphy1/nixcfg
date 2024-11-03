@@ -15,7 +15,20 @@ in
     ../common
     (mylib.scanPaths ../optional)
     inputs.home-manager.nixosModules.home-manager
+    inputs.sops-nix.nixosModules.sops
   ];
+
+  sops = {
+    age = {
+      keyFile = "${homedir}/.config/sops/age/keys.txt";
+    };
+    defaultSopsFile = "${secretspath}/${config.networking.hostName}.secrets.yaml";
+    secrets = {
+      user_pass = {
+        neededForUsers = true;
+      };
+    };
+  };
 
   users.users.${username} = {
     isNormalUser = true;
