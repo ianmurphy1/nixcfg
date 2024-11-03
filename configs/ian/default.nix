@@ -1,4 +1,6 @@
-{ mylib, ...}:
+{ lib, mylib, ...}:
 {
-  imports = (mylib.scanPaths ./.);
+  imports = lib.flatten [
+    (mylib.scanPaths ./.)
+  ];
 }

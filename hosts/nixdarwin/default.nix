@@ -4,11 +4,13 @@ let
   secretspath = builtins.toString inputs.mysecrets;
   username = myvars.username;
   user = config.users.users."${username}";
+  hostname = config.networking.hostName;
   usergroup = user.group;
   homedir = user.home;
 in
 {
   imports = [
+    ../packages
     ../common/vim
     ../common/kitty
     inputs.home-manager.darwinModules.home-manager
@@ -16,7 +18,7 @@ in
 
   home-manager = {
     users = {
-      "${username}" = ../../home/${username};
+      "${username}" = ../../home/${username}/${hostname}.nix;
     };
     extraSpecialArgs = { inherit inputs; };
   };

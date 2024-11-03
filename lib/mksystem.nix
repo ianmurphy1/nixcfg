@@ -32,6 +32,7 @@ in systemFunc rec {
   inherit system specialArgs;
   modules = [
     ../hosts/${name}
+    { networking.hostName = "${name}"; }
     home-manager.default {
       home-manager.useGlobalPkgs = true;
       home-manager.extraSpecialArgs = specialArgs;
