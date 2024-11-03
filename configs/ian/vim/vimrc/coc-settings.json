@@ -3,12 +3,16 @@
     "nixd": {
       "command": "nixd",
       "filetypes": ["nix"],
-      "nixpkgs": {
-        "expr": "import <nixpkgs> {}"      
-      },
-      "options": {
-        "nixos": {
-          "expr": "(builtins.getFlake \"/home/ian/nixcfg\").nixosConfigurations.nixos.options"
+      "settings": {
+        "nixd": {
+          "nixpkgs": {
+            "expr": "import <nixpkgs> {}"
+          },
+          "options": {
+            "nixos": {
+              "expr": "(builtins.getFlake \"/home/ian/nixcfg\").nixosConfigurations.nixos.options"
+            }
+          }
         }
       }
     }

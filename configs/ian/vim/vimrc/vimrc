@@ -6,8 +6,8 @@ endif
 
 "
 "
-" These dirs are created by systemds tmpfiles
-" creation of these hasn't been implemented on
+" These dirs are created by systemds tmpfiles.
+" Creation of these hasn't been implemented on
 " mac yet so expect errors
 "
 "
@@ -28,6 +28,16 @@ if !exists("g:os")
     let g:os = substitute(system('uname'), '\n', '', '')
   endif
 endif
+
+if g:os == "Linux"
+  noremap <Leader>y "+y
+  noremap <Leader>p "+p
+elseif g:os == "Darwin"
+  noremap <Leader>y "*y
+  noremap <Leader>p "*p
+endif
+
+
 if has("mouse_sgr")
   set ttymouse=sgr
 else
@@ -79,9 +89,6 @@ set encoding=utf-8
 set t_Co=256
 set termencoding=utf-8
 set laststatus=2
-"let g:gruvbox_contrast_dark = 'hard'
-"colorscheme gruvbox
-"let g:airline_theme='gruvbox'
 colorscheme jellybeans
 let g:airline_theme='jellybeans'
 
@@ -102,6 +109,7 @@ set updatetime=400
 set splitright
 set tabstop=4
 set shiftwidth=4
+
 
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab path+=node_modules
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 expandtab path+=node_modules
@@ -132,10 +140,8 @@ let g:sql_set_type_default = 'pgsql'
   :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-noremap <Leader>y "*y
-noremap <Leader>p "*p
-noremap <Leader>Y "+y
-noremap <Leader>P "+p
+let NERDTreeShowLineNumbers=0
+
 
 highlight clear SignColumn
 
@@ -143,10 +149,6 @@ highlight clear SignColumn
 let g:go_fmt_autosave = 0
 
 let g:gitgutter_terminal_reports_focus=0
-
-" Fix for NERDTree menu stuck in expanded mode after copying/moving files/dirs
-" in the NERDTree's context menu
-" let g:NERDTreeMinimalMenu=1
 
 " Settings for the linux styling plugin
 let g:linuxsty_patterns = [ "/home/ian/dev/kernel" ]
@@ -172,7 +174,7 @@ let g:vimtex_compiler_latexmk = {
 " Toggle hybrid or absolute number lines
 function! NumberToggle()
   if(&rnu == 1)
-  set nornu
+    set nornu
   else
     set rnu
   endif
@@ -182,4 +184,4 @@ nnoremap <silent> <C-n> :call NumberToggle()<CR>
 
 source ~/.vim/nerdtree-icons.vim
 source ~/.vim/coc-settings.vim
-source ~/test.vim
+"source ~/test.vim

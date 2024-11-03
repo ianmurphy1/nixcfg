@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, outputs, myvars, mylib, ...}:
+{ config, pkgs, inputs, lib, myvars, mylib, ...}:
 
 let
   secretspath = builtins.toString inputs.mysecrets;

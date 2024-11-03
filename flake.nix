@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,45 +25,25 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, ... }@inputs:
     let
-      inherit (self) outputs;
-      system = "x86_64-linux";
-
-      lib = nixpkgs.lib;
-      myvars = import ./vars { };
-      mylib = import ./lib { inherit lib; };
       overlays = import ./overlays;
-      pkgs = import nixpkgs { 
-        system = system;
-        config.allowUnfree = true;
-        inherit overlays;
-      };
-      specialArgs = {
-        inherit
-          inputs
-          outputs
-          pkgs
-          mylib
-          myvars;
-      };
 
-      mkSystem = pkgs: system: hostname:
-        pkgs.lib.nixosSystem {
-          inherit system specialArgs;
-          modules = [
-            { networking.hostName = hostname; }
-            home-manager.nixosModules.default
-            {
-              home-manager.extraSpecialArgs = specialArgs; 
-              home-manager.useGlobalPkgs = true;
-            }
-            ./hosts/${hostname}
-          ];
-        };
+      mkSystem2 = import ./lib/mksystem.nix {
+        inherit nixpkgs overlays inputs;
+      };
     in {
       nixosConfigurations = {
-        nixos = mkSystem inputs.nixpkgs "x86_64-linux" "nixos";
+        #nixos = mkSystem inputs.nixpkgs "x86_64-linux" "nixos";
+        nixos = mkSystem2 "nixos" {
+          system = "x86_64-linux";
+        };
+      };
+      darwinConfiguration = {
+        darwinnix = mkSystem2 "darwinnix" {
+          system = "x86_64-darwin";
+          darwin = true;
+        };
       };
   };
 }
