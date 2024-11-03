@@ -4,7 +4,7 @@
     kitty
   ]; 
 
-  environment.sessionVariables = {
+  environment.variables = {
     TERM = "kitty";
   };
 }

@@ -5,7 +5,7 @@
     nodejs_20
     nixd
   ];
-  environment.sessionVariables = {
+  environment.variables = {
     EDITOR = "vim";
   };
 }
