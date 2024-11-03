@@ -5,7 +5,6 @@ let
 in
 {
   imports = lib.flatten [
-    inputs.home-manager.nixosModules.home-manager
     (mylib.scanPaths ./.)
   ];
 

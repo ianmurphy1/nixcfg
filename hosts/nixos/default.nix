@@ -9,26 +9,13 @@ let
 in
 {
   imports = lib.flatten [
-    inputs.sops-nix.nixosModules.sops
     ./services
     ./hardware-configuration.nix
     ./system.nix
     ../common
     (mylib.scanPaths ../optional)
+    inputs.home-manager.nixosModules.home-manager
   ];
-
-  # Init sops-nix here and use secrets wherever they're needed
-  sops = {
-    age = {
-      keyFile = "${homedir}/.config/sops/age/keys.txt";
-    };
-    defaultSopsFile = "${secretspath}/${config.networking.hostName}.secrets.yaml";
-    secrets = {
-      user_pass = {
-        neededForUsers = true;
-      };
-    };
-  };
 
   users.users.${username} = {
     isNormalUser = true;
@@ -49,6 +36,20 @@ in
     rules = [
       "d /home/${username}/.vimextra/swap 0755 ${username} ${usergroup} - -"
       "d /home/${username}/.vimextra/backup 0755 ${username} ${usergroup} - -"
+    ];
+  };
+
+  security = {
+    sudo.extraRules = [
+      {
+        users = [ "${myvars.username}" ];
+        commands = [
+          {
+            command = "ALL";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+      }
     ];
   };
 

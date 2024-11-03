@@ -1,8 +1,9 @@
 # zsh.nix
-{ config, pkgs, ... }:
+{ config, pkgs, myvars, ... }:
 
 let
   nixosConfig = "${config.users.users.ian.home}/nixcfg";
+  username = myvars.username;
 in
 {
   environment.systemPackages = with pkgs; [

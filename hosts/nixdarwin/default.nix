@@ -9,16 +9,16 @@ let
   homedir = user.home;
 in
 {
-  imports = [
+  imports = lib.flatten [
     ./packages
-    ../common/vim
-    ../common/kitty
-    ../common/fonts
-    ../common/cli
+    ../common
     inputs.home-manager.darwinModules.home-manager
   ];
 
   home-manager = {
+    sharedModules = [
+      inputs.sops-nix.homeManagerModules.sops
+    ];
     users = {
       "${username}" = ../../home/${username}/${hostname}.nix;
     };
