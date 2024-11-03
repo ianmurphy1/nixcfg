@@ -43,10 +43,10 @@
     "mysecrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1730581144,
-        "narHash": "sha256-7cBz9TB3vHHd/n4cVmyK8m2dxjtGbuQ35H+P0epapvo=",
+        "lastModified": 1730625650,
+        "narHash": "sha256-Z65I6iTVppeskiE/mzwVUJsUm55h1VsoMlHa7sGwCq0=",
         "ref": "main",
-        "rev": "026d5d6d04deae6ffdfb0ec6e8db0a42ad0a3596",
+        "rev": "c1d24eff0ce32f2c03cb08a97ebdef328b7222c4",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ianmurphy1/sops-secrets.git"

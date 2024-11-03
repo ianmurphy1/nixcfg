@@ -8,10 +8,29 @@ let
   homedir = user.home;
 in
 {
+  users.users.${username} = {
+    isNormalUser = true;
+    home = "/Users/ian";
+    shell = pkgs.zsh;
+  };
+
+  sops = {
+    age = {
+      keyFile = "${homedir}/.config/sops/age/keys.txt";
+    };
+    defaultSopsFile = "${secretspath}/${config.networking.hostName}.secrets.yaml";
+    secrets = {
+      user_pass = {
+        neededForUsers = true;
+      };
+    };
+  };
+
   imports = lib.flatten [
     inputs.sops-nix.nixosModules.sops
     ../common
   ];
+
   programs.ssh = {
     startAgent = true;
   };
@@ -20,7 +39,7 @@ in
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
-      trusted-users = [ "root" "${username}" "@wheel" ];
+      trusted-users = [ "root" "${username}" ];
       auto-optimise-store = true;
       warn-dirty = false;
     };
