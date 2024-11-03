@@ -8,31 +8,26 @@ let
   homedir = user.home;
 in
 {
-  users.users.${username} = {
-    isNormalUser = true;
-    home = "/Users/ian";
-    shell = pkgs.zsh;
-  };
-
-  sops = {
-    age = {
-      keyFile = "${homedir}/.config/sops/age/keys.txt";
-    };
-    defaultSopsFile = "${secretspath}/${config.networking.hostName}.secrets.yaml";
-    secrets = {
-      user_pass = {
-        neededForUsers = true;
-      };
-    };
-  };
-
-  imports = lib.flatten [
-    inputs.sops-nix.nixosModules.sops
-    ../common
+  imports = [
+    ../common/vim
+    ../common/kitty
+    inputs.home-manager.darwinModules.home-manager
   ];
 
-  programs.ssh = {
-    startAgent = true;
+  home-manager = {
+    users = {
+      "${username}" = ../../home/${username};
+    };
+    extraSpecialArgs = { inherit inputs; };
+  };
+  system.stateVersion = 5;
+  services.nix-daemon = {
+    enable = true;
+  };
+  users.users.${username} = {
+    name = "${username}";
+    home = "/Users/${username}";
+    shell = pkgs.zsh;
   };
 
   nix = {
@@ -45,6 +40,13 @@ in
     };
     optimise.automatic = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    curl
+    git
+    wget
+    zsh
+  ];
 
   nixpkgs = {
     config = {

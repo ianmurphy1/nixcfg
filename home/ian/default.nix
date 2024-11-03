@@ -1,4 +1,4 @@
-{ pkgs, lib, myvars, mylib, ...}:
+{ pkgs, lib, myvars, mylib, config, ...}:
 {
   imports = lib.flatten [
     ../../configs/${myvars.username}
@@ -7,7 +7,6 @@
 
   home = {
     username = "${myvars.username}";
-    homeDirectory = "/home/${myvars.username}";
     stateVersion = lib.mkDefault "24.11";
     pointerCursor = {
       x11.enable = true;
