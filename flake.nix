@@ -40,7 +40,7 @@
         };
       };
       darwinConfiguration = {
-        darwinnix = mkSystem2 "darwinnix" {
+        nixdarwin = mkSystem2 "nixdarwin" {
           system = "x86_64-darwin";
           darwin = true;
         };
