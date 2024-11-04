@@ -28,7 +28,7 @@ let
       mylib
       myvars;
   };
-in systemFunc rec {
+in systemFunc {
   inherit system specialArgs;
   modules = [
     ../hosts/${name}

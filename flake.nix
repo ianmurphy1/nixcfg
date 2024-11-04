@@ -34,18 +34,17 @@
     let
       overlays = import ./overlays;
 
-      mkSystem2 = import ./lib/mksystem.nix {
+      mkSystem = import ./lib/mksystem.nix {
         inherit nixpkgs overlays inputs;
       };
     in {
       nixosConfigurations = {
-        #nixos = mkSystem inputs.nixpkgs "x86_64-linux" "nixos";
-        nixos = mkSystem2 "nixos" rec {
+        nixos = mkSystem "nixos" {
           system = "x86_64-linux";
         };
       };
       darwinConfigurations = {
-        nixdarwin = mkSystem2 "nixdarwin" {
+        nixdarwin = mkSystem "nixdarwin" {
           system = "x86_64-darwin";
           darwin = true;
         };
