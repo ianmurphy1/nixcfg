@@ -12,7 +12,6 @@ in
     ./packages
     ../common
     inputs.home-manager.darwinModules.home-manager
-    inputs.sops-nix-local.darwinModules.sops
   ];
 
   sops = {
