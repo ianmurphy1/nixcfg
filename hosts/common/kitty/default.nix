@@ -4,7 +4,7 @@
     kitty
   ]; 
 
-  environment.variables = {
-    TERM = "kitty";
-  };
+#  environment.variables = {
+#    TERM = "kitty";
+#  };
 }

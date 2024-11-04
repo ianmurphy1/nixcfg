@@ -27,11 +27,14 @@
       fi
     '';
     initExtra = ''
+       if test -n "$KITTY_INSTALLATION_DIR"; then
+        autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+        kitty-integration
+        unfunction kitty-integration
+      fi
       eval "$(${pkgs.zoxide}/bin/zoxide init zsh --cmd cd)"
       # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-      export TEST_SECRET="$(cat /run/secrets/test_secret || echo "not set")"
     '';
   };
 }
