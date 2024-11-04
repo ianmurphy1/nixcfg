@@ -14,19 +14,6 @@ in
     inputs.home-manager.darwinModules.home-manager
   ];
 
-  sops = {
-    age = {
-      keyFile = "${homedir}/.config/sops/age/keys.txt";
-    };
-    defaultSopsFile = "${secretspath}/${config.networking.hostName}.secrets.yaml";
-    secrets = {
-      vault_token = {
-        owner = "${username}";
-        group = "staff";
-      };
-    };
-  };
-
   home-manager = {
     users = {
       "${username}" = ../../home/${username}/${hostname}.nix;
