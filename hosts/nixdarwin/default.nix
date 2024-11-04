@@ -12,7 +12,15 @@ in
     ./packages
     ../common
     inputs.home-manager.darwinModules.home-manager
+    inputs.sops-nix-local.darwinModules.sops
   ];
+
+  sops = {
+    age = {
+      keyFile = "${homedir}/.config/sops/age/keys.txt";
+    };
+    defaultSopsFile = "${secretspath}/${hostname}.secrets.yaml";
+  };
 
   home-manager = {
     users = {
@@ -43,6 +51,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    python3
     curl
     git
     wget

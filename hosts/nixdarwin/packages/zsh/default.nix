@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+  sops.secrets = {
+    test_secret = {
+      owner = "ian";
+    };
+  };
   environment.systemPackages = with pkgs; [
     zoxide
     zsh-powerlevel10k
