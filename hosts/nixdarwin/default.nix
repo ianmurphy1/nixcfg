@@ -5,7 +5,6 @@ let
   username = myvars.username;
   user = config.users.users."${username}";
   hostname = config.networking.hostName;
-  usergroup = user.group;
   homedir = user.home;
 in
 {
@@ -13,12 +12,23 @@ in
     ./packages
     ../common
     inputs.home-manager.darwinModules.home-manager
+    inputs.sops-nix-local.darwinModules.sops
   ];
 
+  sops = {
+    age = {
+      keyFile = "${homedir}/.config/sops/age/keys.txt";
+    };
+    defaultSopsFile = "${secretspath}/${config.networking.hostName}.secrets.yaml";
+    secrets = {
+      vault_token = {
+        owner = "${username}";
+        group = "staff";
+      };
+    };
+  };
+
   home-manager = {
-    sharedModules = [
-      inputs.sops-nix.homeManagerModules.sops
-    ];
     users = {
       "${username}" = ../../home/${username}/${hostname}.nix;
     };

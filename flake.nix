@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix-local = {
+      url = "git+file:///Users/ian/dev/nixos/sops-nix-fork";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     mysecrets = {
       url = "git+ssh://git@github.com/ianmurphy1/sops-secrets.git?ref=main&shallow=1";
       flake = false;
