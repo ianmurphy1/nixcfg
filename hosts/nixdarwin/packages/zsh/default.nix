@@ -4,9 +4,6 @@ sops.secrets = {
   test_secret = {
     owner = "ian";
   };
-  #test_template_secret = {
-  #  owner = "ian";
-  #};
 };
   environment.systemPackages = with pkgs; [
     zoxide
