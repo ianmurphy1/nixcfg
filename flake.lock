@@ -145,17 +145,14 @@
         "nixpkgs-stable": "nixpkgs-stable_2"
       },
       "locked": {
-        "lastModified": 1730882644,
-        "narHash": "sha256-5dzOjfwWNvUzAS48ER/kvpZa3rwHcZlwaBctybizqLo=",
-        "ref": "refs/heads/master",
-        "rev": "78cf5d1d5b5e129d4afeb769e29cd2959abd83cc",
-        "revCount": 883,
-        "type": "git",
-        "url": "file:///Users/ian/dev/nixos/sops-nix"
+        "lastModified": 1730905009,
+        "narHash": "sha256-dm10sR5pNEHZSFcKFVDbq47lzzP7FnDhkhbBeUgO6tE=",
+        "path": "/Users/ian/dev/nixos/sops-nix",
+        "type": "path"
       },
       "original": {
-        "type": "git",
-        "url": "file:///Users/ian/dev/nixos/sops-nix"
+        "path": "/Users/ian/dev/nixos/sops-nix",
+        "type": "path"
       }
     }
   },

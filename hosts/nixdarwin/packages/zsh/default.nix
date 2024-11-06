@@ -11,15 +11,6 @@
     zsh-fast-syntax-highlighting
   ];
 
-  sops.templates.test_template = {
-    content = ''
-      TESTING OUT SOPS TEMPLATES
-      THE SECRET VALUE IS: ${config.sops.placeholder.test_secret}
-      TESTING IF THIS GETS ADDED
-    '';
-    owner = "ian";
-  };
-
   environment.variables = {
     VAULT_ADDR = "https://vault.home";
     VAULT_FORMAT = "json";

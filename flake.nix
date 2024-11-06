@@ -20,7 +20,7 @@
     };
 
     sops-nix-local = {
-      url = "git+file:///Users/ian/dev/nixos/sops-nix";
+      url = "path:/Users/ian/dev/nixos/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

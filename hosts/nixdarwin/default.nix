@@ -20,6 +20,11 @@ in
       keyFile = "${homedir}/.config/sops/age/keys.txt";
     };
     defaultSopsFile = "${secretspath}/${hostname}.secrets.yaml";
+    secrets = {
+      test_template_secret = {
+        neededForUsers = true;
+      };
+    };
   };
 
   home-manager = {
