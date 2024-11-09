@@ -9,7 +9,7 @@ let
 in
 {
   imports = lib.flatten [
-    ./packages
+    ../optional/zsh
     ../common
     inputs.home-manager.darwinModules.home-manager
     inputs.sops-nix-local.darwinModules.sops
@@ -49,7 +49,6 @@ in
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "${username}" ];
-      auto-optimise-store = true;
       warn-dirty = false;
     };
     optimise.automatic = true;

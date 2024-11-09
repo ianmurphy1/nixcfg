@@ -27,6 +27,8 @@ in
     interactiveShellInit = ''
       source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
       eval "$(${pkgs.zoxide}/bin/zoxide init zsh --cmd cd)"
+      # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
     shellInit = ''
       export VAULT_TOKEN="$(cat ${config.sops.secrets.vault_token.path})"

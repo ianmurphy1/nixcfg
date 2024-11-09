@@ -4,7 +4,7 @@
     ../../configs/${myvars.username}
     ./ssh
     ./git
-    ./zsh
+#    ./zsh
   ];
 
   home = {

@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "git+file:///Users/ian/dev/nixos/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -20,7 +20,7 @@
     };
 
     sops-nix-local = {
-      url = "path:/Users/ian/dev/nixos/sops-nix";
+      url = "path:/Users/ian/dev/nixos/sops-nix-bak";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
