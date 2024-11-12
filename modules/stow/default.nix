@@ -11,7 +11,7 @@ in {
     programs.stow = {
       enable = lib.mkEnableOption "Enable stow symlink manager";
 
-      package = lib.mkPackageOption pkgs "stow";
+      package = lib.mkPackageOption pkgs "stow" {};
     };
   };
 
