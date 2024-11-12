@@ -20,11 +20,6 @@ in
       keyFile = "${homedir}/.config/sops/age/keys.txt";
     };
     defaultSopsFile = "${secretspath}/${hostname}.secrets.yaml";
-    secrets = {
-      test_template_secret = {
-        neededForUsers = true;
-      };
-    };
   };
 
   home-manager = {
@@ -37,6 +32,7 @@ in
   services.nix-daemon = {
     enable = true;
   };
+
   users.users.${username} = {
     name = "${username}";
     home = "/Users/${username}";
