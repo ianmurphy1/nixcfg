@@ -66,6 +66,8 @@ in
     ];
   };
 
+  programs.stow.enable = true;
+
   programs.ssh = {
     startAgent = true;
   };

@@ -1,5 +1,6 @@
-{ lib, inputs, ... }:
+{ ... }:
 {
-  environment.systemPackages = [
+  imports = [
+    ./stow
   ];
 }

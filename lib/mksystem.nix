@@ -21,6 +21,8 @@ let
     config.allowUnfree = true;
   };
 
+  nixosModules = import ../modules;
+
   specialArgs = {
     inherit
       inputs
@@ -31,6 +33,7 @@ let
 in systemFunc {
   inherit system specialArgs;
   modules = [
+    nixosModules
     ../hosts/${name}
     { networking.hostName = "${name}"; }
     home-manager.default {
