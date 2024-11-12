@@ -4,7 +4,7 @@
   # into a specific place
   environment.systemPackages = with pkgs; [
     vault-bin jq yq-go fastfetch 
-    bat step-cli zip 
+    bat zip
     unrar unzip sops age
     tree ripgrep fd
   ];

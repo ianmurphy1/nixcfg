@@ -92,8 +92,6 @@ set laststatus=2
 colorscheme jellybeans
 let g:airline_theme='jellybeans'
 
-:highlight Visual cterm=reverse ctermbg=NONE
-
 " Disable arrows for navigation
 no <down> ddp
 no <left> <Nop>
