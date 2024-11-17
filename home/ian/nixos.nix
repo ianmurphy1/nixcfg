@@ -8,7 +8,7 @@
 
   home = {
     username = "${myvars.username}";
-    stateVersion = lib.mkDefault "24.11";
+    stateVersion = lib.mkDefault "25.05";
   };
   programs.home-manager.enable = true;
 }
