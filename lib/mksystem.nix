@@ -19,6 +19,7 @@ let
   pkgs = import nixpkgs {
     inherit system overlays;
     config.allowUnfree = true;
+    config.allowUnsupportedSystem = true;
   };
 
   nixosModules = import ../modules;

@@ -39,6 +39,7 @@ in
       "audio"
       "video"
       "input"
+      "docker"
     ];
     shell = pkgs.zsh;
   };

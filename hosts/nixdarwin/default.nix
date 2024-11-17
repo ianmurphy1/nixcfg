@@ -1,11 +1,8 @@
 { config, pkgs, inputs, lib, myvars, mylib, ...}:
 
 let
-  secretspath = builtins.toString inputs.mysecrets;
   username = myvars.username;
-  user = config.users.users."${username}";
   hostname = config.networking.hostName;
-  homedir = user.home;
 in
 {
   imports = lib.flatten [
