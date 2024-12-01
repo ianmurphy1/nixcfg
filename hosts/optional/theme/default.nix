@@ -2,9 +2,9 @@
 
 {
   # Enable Theme
-  environment.variables.GTK_THEME = "notwaita-white";
-  environment.variables.XCURSOR_THEME = "Notwaita-White";
-  environment.variables.XCURSOR_SIZE = "28";
+  environment.variables.GTK_THEME = "volantes-light-cursors";
+  environment.variables.XCURSOR_THEME = "Volantes-Light-Cursors";
+  environment.variables.XCURSOR_SIZE = "30";
   console = {
     earlySetup = true;
   };
@@ -24,5 +24,6 @@
     numix-icon-theme-circle
     colloid-icon-theme
     adwaita-icon-theme
+    volantes-cursors
   ];
 }

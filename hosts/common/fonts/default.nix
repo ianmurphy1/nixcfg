@@ -6,7 +6,8 @@
       font-awesome
       font-awesome_5
       powerline-fonts
-      nerdfonts
+      nerd-fonts.sauce-code-pro
+      nerd-fonts.noto
     ];
   };
 }

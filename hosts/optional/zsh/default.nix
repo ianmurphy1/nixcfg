@@ -26,6 +26,7 @@ in
     };
     interactiveShellInit = ''
       source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
+      source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
       eval "$(${pkgs.zoxide}/bin/zoxide init zsh --cmd cd)"
     '';
     shellInit = ''
@@ -46,6 +47,7 @@ in
     zoxide
     zsh-powerlevel10k
     zsh-fast-syntax-highlighting
+    zsh-nix-shell
   ];
 
   environment.variables = {
