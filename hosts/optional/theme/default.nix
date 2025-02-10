@@ -16,13 +16,13 @@
   };
 
   # Override packages
-  nixpkgs.config.packageOverrides = pkgs: {
-    colloid-icon-theme = pkgs.colloid-icon-theme.override { colorVariants = ["default"]; };
-  };
+#  nixpkgs.config.packageOverrides = pkgs: {
+#    colloid-icon-theme = pkgs.colloid-icon-theme.override { colorVariants = ["default"]; };
+#  };
 
   environment.systemPackages = with pkgs; [
     numix-icon-theme-circle
-    colloid-icon-theme
+#    colloid-icon-theme
     adwaita-icon-theme
     volantes-cursors
   ];

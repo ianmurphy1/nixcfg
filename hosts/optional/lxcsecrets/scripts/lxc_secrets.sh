@@ -1,4 +1,4 @@
-set -e
+set -xe
 IP=${IP?undefined}
 APP=${APP?undefined}
 SECRETS_DIR="/home/ian/dev/secrets/sops"
@@ -24,7 +24,7 @@ key="${AGE_KEY}" \
 
 sops \
 	--config "${SECRETS_DIR}/.sops.yaml" \
-	updatekeys -y "${SECRETS_DIR}/postgres.secrets.yaml" 2>&1 \
+	updatekeys -y "${SECRETS_DIR}/${APP}.secrets.yaml" 2>&1 \
 	| grep "already up to date" \
 	&& _rc=$? \
 	|| _rc=$?
