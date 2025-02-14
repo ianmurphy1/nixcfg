@@ -11,7 +11,7 @@ let
   ];
   base_plugins = with vimPlugins; [
     vim-fugitive vim-just
-    vim-nix
+    vim-nix vimtex
     gitgutter
     jellybeans-vim
     vim-airline

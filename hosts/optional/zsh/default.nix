@@ -48,6 +48,9 @@ in
     zsh-powerlevel10k
     zsh-fast-syntax-highlighting
     zsh-nix-shell
+    (texlive.combine {
+      inherit (texlive) scheme-full;
+    })
   ];
 
   environment.variables = {
