@@ -7,5 +7,6 @@
     bat zip bottom
     unrar unzip sops age
     tree ripgrep fd
+    terraform-ls
   ];
 }

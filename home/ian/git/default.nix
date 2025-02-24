@@ -8,5 +8,8 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
+    signing = {
+      format = "ssh";
+    };
   };
 }

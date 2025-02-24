@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     vim-full # Uses the vim defined by the overlay
-    nodejs_20
+    nodejs
     nixd
   ];
   environment.variables = {
