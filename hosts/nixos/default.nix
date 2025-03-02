@@ -1,11 +1,17 @@
-{ config, pkgs, inputs, lib, myvars, mylib, ...}:
+{ config, pkgs, inputs, nur, lib, myvars, mylib, ...}:
 
 let
+
   secretspath = builtins.toString inputs.mysecrets;
   username = myvars.username;
   user = config.users.users."${username}";
   usergroup = user.group;
   homedir = user.home;
+  localOverlays = lib.flatten [
+    (import ../../overlays)
+    nur.overlays.default
+  ];
+
 in
 {
   imports = lib.flatten [
@@ -95,13 +101,22 @@ in
       trusted-users = [ "root" "${username}" "@wheel" ];
       auto-optimise-store = true;
       warn-dirty = false;
+      substituters = [
+        "https://ncps.home"
+      ];
+      trusted-public-keys = [
+        "ncps.home:6qNYS6mjcO2Ef2VcmIEC7rX4ZMP91PL74oP2cO9JJcU="
+      ];
     };
     optimise.automatic = true;
   };
 
   nixpkgs = {
+    overlays = localOverlays;
+    
     config = {
-      allowUnfree = true;
+      allowBroken = true;
+      allowUnfree = true; 
     };
   };
 }

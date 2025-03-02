@@ -44,7 +44,6 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    zoxide
     zsh-powerlevel10k
     zsh-fast-syntax-highlighting
     zsh-nix-shell

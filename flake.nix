@@ -14,18 +14,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     mysecrets = {
       url = "git+ssh://git@github.com/ianmurphy1/sops-secrets.git?ref=main&shallow=1";
       flake = false;
     };
   };
 
-  outputs = { nixpkgs, ... }@inputs:
+  outputs = { nixpkgs, nur, ... }@inputs:
     let
-      overlays = import ./overlays;
-
       mkSystem = import ./lib/mksystem.nix {
-        inherit nixpkgs overlays inputs;
+        inherit nixpkgs nur inputs;
       };
     in {
       nixosConfigurations = {

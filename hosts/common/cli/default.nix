@@ -4,7 +4,7 @@
   # into a specific place
   environment.systemPackages = with pkgs; [
     vault-bin jq yq-go fastfetch 
-    bat zip bottom
+    bat zip bottom zoxide
     unrar unzip sops age
     tree ripgrep fd
     terraform-ls

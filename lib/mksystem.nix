@@ -1,6 +1,6 @@
 # This function creates a NixOS system based on our VM setup for a
 # particular architecture.
-{ nixpkgs, overlays, inputs }:
+{ nixpkgs, nur, inputs }:
 
 name:
 {
@@ -15,25 +15,20 @@ let
   lib = nixpkgs.lib;
   myvars = import ../vars;
   mylib = import ./default.nix { inherit lib; };
-
-  pkgs = import nixpkgs {
-    inherit system overlays;
-    config.allowUnfree = true;
-    config.allowUnsupportedSystem = true;
-  };
-
   nixosModules = import ../modules;
 
   specialArgs = {
     inherit
       inputs
-      pkgs
+      #pkgs
       mylib
+      nur
       myvars;
   };
 in systemFunc {
   inherit system specialArgs;
   modules = [
+    nur.modules.nixos.default
     nixosModules
     ../hosts/${name}
     { networking.hostName = "${name}"; }
