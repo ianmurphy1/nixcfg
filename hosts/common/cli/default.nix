@@ -7,6 +7,6 @@
     bat zip bottom zoxide
     unrar unzip sops age
     tree ripgrep fd
-    terraform-ls
+    terraform-ls cachix
   ];
 }

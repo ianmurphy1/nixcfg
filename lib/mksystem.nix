@@ -20,7 +20,6 @@ let
   specialArgs = {
     inherit
       inputs
-      #pkgs
       mylib
       nur
       myvars;
@@ -29,6 +28,7 @@ in systemFunc {
   inherit system specialArgs;
   modules = [
     nur.modules.nixos.default
+    #nur.legacyPackages."${system}".repos.ianmurphy1.modules.commafeed
     nixosModules
     ../hosts/${name}
     { networking.hostName = "${name}"; }

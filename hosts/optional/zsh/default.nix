@@ -5,8 +5,13 @@ let
   nixosConfig = "${config.users.users.ian.home}/nixcfg";
 in
 {
-  sops.secrets.vault_token = {
-    owner = "${config.users.users.ian.name}";
+  sops.secrets = {
+    vault_token = {
+      owner = "${config.users.users.ian.name}";
+    };
+    cachix_token = {
+      owner = "${config.users.users.ian.name}";
+    };
   };
 
   programs.zsh = {
@@ -31,6 +36,7 @@ in
     '';
     shellInit = ''
       export VAULT_TOKEN="$(cat ${config.sops.secrets.vault_token.path})"
+      export CACHIX_TOKEN="$(cat ${config.sops.secrets.cachix_token.path})"
     '';
     ohMyZsh = {
       enable = true;
