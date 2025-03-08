@@ -5,13 +5,14 @@
   programs.direnv = {
     package = pkgs.direnv;
     enable = true;
+    silent = false;
+    loadInNixShell = true;
+    direnvrcExtra = "";
     nix-direnv = {
       enable = true;
       package = pkgs.nix-direnv;
     };
   };
-
-  services.lorri.enable = true;
 
   virtualisation.docker.enable = true;
 
@@ -23,5 +24,6 @@
     kustomize
     kubernetes-helm
     docker
+    act
   ];
 }

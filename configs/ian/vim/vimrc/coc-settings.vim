@@ -75,3 +75,11 @@ augroup mygroup
   " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
+
+function! s:disable_coc_for_type()
+        let l:filesuffix_blacklist = [ 'md' ]
+	if index(l:filesuffix_blacklist, expand('%:e')) != -1
+		let b:coc_enabled = 0
+	endif
+endfunction
+autocmd BufRead,BufNewFile * call s:disable_coc_for_type()
