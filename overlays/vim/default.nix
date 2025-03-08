@@ -17,7 +17,7 @@ let
     vim-airline
     vim-airline-themes
     nerdtree vim-nerdtree-syntax-highlight
-    rust-vim
+    rust-vim vim-go
     vim-terraform
     vim-devicons
     vim-python-pep8-indent

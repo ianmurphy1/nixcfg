@@ -145,9 +145,6 @@ let NERDTreeShowLineNumbers=0
 
 highlight clear SignColumn
 
-" disable fmt on save
-let g:go_fmt_autosave = 0
-
 let g:gitgutter_terminal_reports_focus=0
 
 " Settings for the linux styling plugin
@@ -181,6 +178,13 @@ function! NumberToggle()
 endfunction
 
 nnoremap <silent> <C-n> :call NumberToggle()<CR>
+
+" vim-go settings
+"
+" disable vim-go using gopls
+let g:go_gopls_enabled = 0
+" disable go fmt on save
+let g:go_fmt_autosave = 0
 
 source ~/.vim/nerdtree-icons.vim
 source ~/.vim/coc-settings.vim

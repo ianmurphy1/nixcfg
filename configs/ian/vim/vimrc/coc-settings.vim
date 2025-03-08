@@ -76,6 +76,7 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+" Disables coc on listed filetypes
 function! s:disable_coc_for_type()
         let l:filesuffix_blacklist = [ 'md' ]
 	if index(l:filesuffix_blacklist, expand('%:e')) != -1
