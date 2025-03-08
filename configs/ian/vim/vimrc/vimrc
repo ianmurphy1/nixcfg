@@ -107,19 +107,11 @@ map <Space> <Leader>
 
 set updatetime=400
 set splitright
-set tabstop=4
-set shiftwidth=4
+set tabstop=2 shiftwidth=2 expandtab
 
 
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab path+=node_modules
-autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 expandtab path+=node_modules
-autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType sql setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType vim setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType go setlocal shiftwidth=4 tabstop=4 expandtab
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType javascript setlocal path+=node_modules
+autocmd FileType typescript setlocal path+=node_modules
 
 augroup filetypedetect
   autocmd BufNew,BufNewFile,BufRead *.tofu :setfiletype terraform
