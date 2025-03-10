@@ -35,6 +35,9 @@
         nixos = mkSystem "nixos" {
           system = "x86_64-linux";
         };
+        galaxy = mkSystem "galaxy" {
+          system = "x86_64-linux";
+        };
       };
       darwinConfigurations = {
         nixdarwin = mkSystem "nixdarwin" {
