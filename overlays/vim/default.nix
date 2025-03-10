@@ -8,6 +8,7 @@ let
     coc-rust-analyzer
     coc-yaml
     coc-vimlsp
+    #coc-ansible
   ];
   base_plugins = with vimPlugins; [
     vim-fugitive vim-just
@@ -21,6 +22,7 @@ let
     vim-terraform
     vim-devicons
     vim-python-pep8-indent
+    ansible-vim
   ];
 in
 {
