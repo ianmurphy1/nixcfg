@@ -1,7 +1,11 @@
-{ pkgs, lib, myvars, mylib, config, ...}:
+{ lib, myvars, osConfig, ...}:
+let
+  username = myvars.username;
+  hostname = "${osConfig.networking.hostName}";
+in
 {
   imports = lib.flatten [
-    ../../configs/${myvars.username}
+    ../../configs/${username}/${hostname}
     ./ssh
     ./git
   ];
