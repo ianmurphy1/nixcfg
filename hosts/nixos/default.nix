@@ -33,6 +33,9 @@ in
       user_pass = {
         neededForUsers = true;
       };
+      vault_unseal_keys = {
+        owner = "${username}";
+      };
     };
   };
 

@@ -9,5 +9,8 @@
     tree ripgrep fd
     terraform-ls cachix
     google-cloud-sdk
+    (texlive.combine {
+      inherit (texlive) scheme-full;
+    })
   ];
 }

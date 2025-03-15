@@ -5,5 +5,5 @@
 
   #################### Packages with external source ####################
 
-  #lxcsecrets = pkgs.callPackage ./lxcsecrets {};
+  unseal-vault = pkgs.callPackage ./unseal-vault {};
 }
