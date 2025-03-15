@@ -48,7 +48,7 @@
   time.timeZone = "Europe/Dublin";
   i18n.defaultLocale = "en_GB.UTF-8";
   console = {
-    font = "Lat2-Terminus16";
+    earlySetup = true;
     keyMap = "uk";
   };
   system.stateVersion = "25.05"; # Did you read the comment?

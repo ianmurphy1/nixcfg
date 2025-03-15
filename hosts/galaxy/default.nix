@@ -1,7 +1,6 @@
 { config, pkgs, inputs, nur, lib, myvars, mylib, ...}:
 
 let
-
   secretspath = builtins.toString inputs.mysecrets;
   username = myvars.username;
   user = config.users.users."${username}";
@@ -11,7 +10,6 @@ let
     (import ../../overlays)
     nur.overlays.default
   ];
-
 in
 {
   imports = lib.flatten [
@@ -40,6 +38,7 @@ in
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets.user_pass.path;
     extraGroups = [
+      "render"
       "wheel"
       "networkmanager"
       "audio"
@@ -90,6 +89,12 @@ in
     curl
     wget
     intel-media-driver
+    intel-ocl
+    clinfo
+    libva-utils
+    libvpl
+    mesa
+    intel-compute-runtime alsa-tools
   ];
 
   nix = {
