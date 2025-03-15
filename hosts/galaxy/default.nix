@@ -10,6 +10,10 @@ let
     (import ../../overlays)
     nur.overlays.default
   ];
+  pubKeys = mylib.scanPathsExt {
+    path = ../common/security/ssh-keys;
+    ext = "pub";
+  };
 in
 {
   imports = lib.flatten [
@@ -47,6 +51,11 @@ in
       "docker"
     ];
     shell = pkgs.zsh;
+    openssh = {
+      authorizedKeys = {
+        keyFiles = pubKeys;
+      };
+    };
   };
 
   # Create directories for vim to store its temp files
