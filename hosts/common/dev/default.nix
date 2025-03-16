@@ -27,5 +27,6 @@
     act
     gopls
     postgresql
+    gh
   ];
 }
