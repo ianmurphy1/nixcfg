@@ -26,5 +26,6 @@
     docker
     act
     gopls
+    postgresql
   ];
 }
