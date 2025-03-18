@@ -38,6 +38,9 @@
         galaxy = mkSystem "galaxy" {
           system = "x86_64-linux";
         };
+        legion = mkSystem "legion" {
+          system = "x86_64-linux";
+        };
       };
       darwinConfigurations = {
         nixdarwin = mkSystem "nixdarwin" {
