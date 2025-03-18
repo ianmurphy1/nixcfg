@@ -2,7 +2,8 @@
 
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_testing;
+    #kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = true;
@@ -12,9 +13,25 @@
         canTouchEfiVariables = true;
       };
     };
+    initrd = {
+      enable = true;
+      includeDefaultModules = true;
+    };
+    extraModprobeConfig = ''
+      options snd-hda-intel model=auto
+    '';
   };
 
+  services.thermald.enable = true;
+
   hardware = {
+    enableAllFirmware = true;
+    sensor.hddtemp = {
+      enable = true;
+      drives = [
+        "/dev/nvme0n1"
+      ];
+    };
     firmware = [
       pkgs.linux-firmware
     ];

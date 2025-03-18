@@ -37,8 +37,6 @@ in
       config = "cd ${nixosConfig}";
     };
     interactiveShellInit = ''
-      ZVM_CURSOR_STYLE_ENABLED=false
-      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
       source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
       eval "$(${pkgs.zoxide}/bin/zoxide init zsh --cmd cd)"

@@ -98,12 +98,6 @@ in
     curl
     wget
     intel-media-driver
-    intel-ocl
-    clinfo
-    libva-utils
-    libvpl
-    mesa
-    intel-compute-runtime alsa-tools
   ];
 
   nix = {
