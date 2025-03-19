@@ -1,5 +1,5 @@
 # zsh.nix
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   nixosConfig = "${config.users.users.ian.home}/nixcfg";
@@ -17,6 +17,8 @@ in
     };
   };
 
+  system.userActivationScripts.zshrc = "touch .zshrc";
+
   programs.zsh = {
     enable = true;
     histSize = 10000;
@@ -25,9 +27,7 @@ in
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     promptInit = ''
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
-      
-      [[ ! -f $${./p10k.zsh;} ]] || source $${./p10k.zsh}
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
     shellAliases = {
       ssh = "kitten ssh";
@@ -37,9 +37,10 @@ in
       config = "cd ${nixosConfig}";
     };
     interactiveShellInit = ''
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
       source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
       source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
-      eval "$(${pkgs.zoxide}/bin/zoxide init zsh --cmd cd)"
+      eval "$(${lib.getExe pkgs.zoxide} init zsh --cmd cd)"
     '';
     shellInit = ''
       export VAULT_TOKEN="$(cat ${config.sops.secrets.vault_token.path})"
