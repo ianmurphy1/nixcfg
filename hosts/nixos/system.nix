@@ -17,7 +17,6 @@
   hardware = {
     firmware = [
       pkgs.linux-firmware
-      pkgs.sof-firmware
     ];
     cpu = {
       intel.updateMicrocode = true;
