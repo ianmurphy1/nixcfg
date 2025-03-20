@@ -20,7 +20,6 @@ let
     #coc-ansible
   ];
   base_plugins = with vimPlugins; [
-    vimcomplete
     vim-fugitive vim-just
     vim-nix vimtex
     gitgutter
