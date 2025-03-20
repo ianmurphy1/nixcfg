@@ -1,10 +1,17 @@
-{ lib, config, ... }:
+{ config, ... }:
+let
+  hostName = config.networking.hostName;
+  scales = {
+    nixos = "1.25";
+    galaxy = "1.15";
+    legion = "1.25";
+  };
+in
 {
   programs.firefox = {
     enable = true;
     preferences = {
-      "layout.css.devPixelsPerPx" =
-        if config.networking.hostName == "nixos" then "1.25" else "1.15";
+      "layout.css.devPixelsPerPx" = scales.${hostName};
     };
   };
 }

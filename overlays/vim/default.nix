@@ -1,6 +1,15 @@
 final: prev:
 let
   vimPlugins = prev.vimPlugins;
+  vimcomplete = prev.vimUtils.buildVimPlugin {
+    name = "vimcomplete";
+    src = prev.fetchFromGitHub {
+      owner = "girishji";
+      repo = "vimcomplete";
+      rev = "0a2f5899aa398f6f8743ccfde1ce9985781f5e6b";
+      hash = "sha256-l+3n2AezQyy4IXKMu/gbPzaMFxfxQdbrf0/37gMKTHw=";
+    };
+  };
   autocomplete_plugins = with vimPlugins; [
     coc-nvim
     coc-sh
@@ -11,6 +20,7 @@ let
     #coc-ansible
   ];
   base_plugins = with vimPlugins; [
+    vimcomplete
     vim-fugitive vim-just
     vim-nix vimtex
     gitgutter

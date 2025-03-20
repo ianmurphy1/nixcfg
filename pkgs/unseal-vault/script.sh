@@ -5,9 +5,10 @@
 # set -x
 set -eo pipefail
 
+VAULT_ADDR="${VAULT_ADDR:?"needs to be set"}"
 TOKEN_FILE=${TOKEN_FILE:?"needs to be set"}
 TOKENS=($(shuf -n 3 "${TOKEN_FILE}"))
-VAULT_ADDR="${VAULT_ADDR:?"needs to be set"}"
+
 for t in ${TOKENS[@]}; do
 	_body=$(jq -c -n --arg token $t '{"key": $token}')
 	curl -s \

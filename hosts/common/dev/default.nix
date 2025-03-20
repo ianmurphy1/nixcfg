@@ -14,7 +14,7 @@
     };
   };
 
-  virtualisation.docker.enable = true;
+  #virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
     devenv just
@@ -23,7 +23,7 @@
     kubectl
     kustomize
     kubernetes-helm
-    docker
+    #docker
     act
     gopls
     postgresql
