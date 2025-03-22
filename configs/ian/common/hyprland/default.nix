@@ -19,7 +19,7 @@ in
           ${ if hostname == "legion" then
           "kb_layout = us
           kb_variant = euro"
-          else "kb_layout = uk" }
+          else "kb_layout = gb" }
           follow_mouse = 2
           numlock_by_default = 1
         
