@@ -18,6 +18,7 @@ let
 in
 {
   imports = lib.flatten [
+    inputs.nixos-hardware.nixosModules.lenovo-legion-16irx9h
     ./services
     ./hardware-configuration.nix
     ./system.nix
@@ -102,6 +103,7 @@ in
     curl
     wget
     intel-media-driver
+    lenovo-legion
   ];
 
   nix = {

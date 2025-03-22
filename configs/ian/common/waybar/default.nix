@@ -4,7 +4,7 @@ let
   thermalZones = {
     galaxy = "7";
     nixos = "6";
-    legion = "6";
+    legion = "9";
   };
 in
 {

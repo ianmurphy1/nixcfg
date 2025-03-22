@@ -19,6 +19,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware = {
+      url = "github:nixos/nixos-hardware/master";
+    };
+
     mysecrets = {
       url = "git+ssh://git@github.com/ianmurphy1/sops-secrets.git?ref=main&shallow=1";
       flake = false;

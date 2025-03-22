@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   boot = {
@@ -12,9 +12,15 @@
         canTouchEfiVariables = true;
       };
     };
+    extraModulePackages = [ config.boot.kernelPackages.lenovo-legion-module ];
+    blacklistedKernelModules = [ "snd_soc_avs" ];
+    extraModprobeConfig = ''
+      options snd-hda-intel model=auto
+    '';
   };
 
   hardware = {
+    enableRedistributableFirmware = true;
     firmware = [
       pkgs.linux-firmware
     ];
@@ -40,6 +46,8 @@
       };
     };
   };
+  
+  services.thermald.enable = lib.mkDefault true;
 
   networking = {
     networkmanager.enable = true;
@@ -49,7 +57,7 @@
   i18n.defaultLocale = "en_GB.UTF-8";
   console = {
     earlySetup = true;
-    keyMap = "uk";
+    keyMap = "us";
   };
   system.stateVersion = "25.05"; # Did you read the comment?
 }
