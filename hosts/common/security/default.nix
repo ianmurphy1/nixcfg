@@ -1,12 +1,10 @@
 {
   config,
+  lib,
   ...
 }:
 let
   hostName = config.networking.hostName;
-  fprintEnabled = {
-    legion = true;
-  };
 in
 {
   security = {
@@ -17,7 +15,7 @@ in
     };
   };
 
-  services.fprintd = {
-    enable = fprintEnabled.${hostName};
+  services.fprintd = lib.mkIf (hostName == "legion") {
+    enable = true;
   };
 }
