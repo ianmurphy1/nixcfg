@@ -18,7 +18,8 @@ let
 in
 {
   imports = lib.flatten [
-    inputs.nixos-hardware.nixosModules.lenovo-legion-16irx9h
+    ./intel
+    ./nvidia
     ./services
     ./hardware-configuration.nix
     ./system.nix
@@ -90,6 +91,8 @@ in
     startAgent = true;
   };
 
+  programs.coolercontrol.enable = true;
+
   services.openssh = {
     enable = true;
     settings = {
@@ -106,6 +109,7 @@ in
     intel-media-driver
     lenovo-legion
     egl-wayland
+    lm_sensors
   ];
 
   nix = {

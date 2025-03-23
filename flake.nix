@@ -19,10 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-hardware = {
-      url = "github:nixos/nixos-hardware/master";
-    };
-    
     hyprland.url = "github:hyprwm/Hyprland";
 
     mysecrets = {

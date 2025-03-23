@@ -2,7 +2,8 @@
 
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    #kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_testing;
     loader = {
       systemd-boot = {
         enable = true;
@@ -12,11 +13,12 @@
         canTouchEfiVariables = true;
       };
     };
-    extraModulePackages = [ config.boot.kernelPackages.lenovo-legion-module ];
-    blacklistedKernelModules = [ "snd_soc_avs" ];
-    extraModprobeConfig = ''
-      options snd-hda-intel model=auto
-    '';
+    # Removing lenovo-legion-module until builds on >= 6.14 kernel get fixed
+    #extraModulePackages = [ config.boot.kernelPackages.lenovo-legion-module ];
+    #blacklistedKernelModules = [ "snd_soc_avs" ];
+    #extraModprobeConfig = ''
+    #  options snd-hda-intel model=auto
+    #'';
   };
 
   hardware = {
