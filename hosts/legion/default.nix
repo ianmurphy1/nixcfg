@@ -102,8 +102,10 @@ in
     zsh
     curl
     wget
+    fprintd
     intel-media-driver
     lenovo-legion
+    egl-wayland
   ];
 
   nix = {

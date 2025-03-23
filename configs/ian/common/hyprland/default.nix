@@ -15,11 +15,18 @@ in
     };
     ".config/hypr/input.conf" = {
       text = ''
+        device {
+          name = logitech-logig-tkl-mkeyboard
+          kb_layout = gb
+        }
+        device {
+          name = ite-tech.-inc.-ite-device(8258)-keyboard
+          kb_layout = us
+          kb_variant = euro
+        }
         input {
-          ${ if hostname == "legion" then
-          "kb_layout = us
-          kb_variant = euro"
-          else "kb_layout = gb" }
+          ${ if hostname != "legion" then "
+          kb_layout = gb" else ""}
           follow_mouse = 2
           numlock_by_default = 1
         
@@ -39,7 +46,7 @@ in
         splash = false
       '';
     };
-    ".confif/hypr/hypridle.conf" = {
+    ".config/hypr/hypridle.conf" = {
       text = ''
         general {
             lock_cmd = ~/.config/hypr/scripts/lockscreen.sh

@@ -1,6 +1,13 @@
 {
+  config,
   ...
 }:
+let
+  hostName = config.networking.hostName;
+  fprintEnabled = {
+    legion = true;
+  };
+in
 {
   security = {
     pki = {
@@ -8,5 +15,9 @@
         ./certs/ca/root.crt
       ];
     };
+  };
+
+  services.fprintd = {
+    enable = fprintEnabled.${hostName};
   };
 }

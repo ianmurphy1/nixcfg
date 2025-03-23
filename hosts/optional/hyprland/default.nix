@@ -1,5 +1,5 @@
 # hyprland.nix
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   # Enable Hyprland and install related pkgs
@@ -8,10 +8,12 @@
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
   programs.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     xwayland = {
       enable = true;
     };
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
   environment.systemPackages = with pkgs; [
     hyprpaper

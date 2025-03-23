@@ -15,6 +15,9 @@ in
     vault_unseal_keys = {
       owner = "${config.users.users.ian.name}";
     };
+    attic_token = {
+      owner = "${config.users.users.ian.name}";
+    };
   };
 
   system.userActivationScripts.zshrc = "touch .zshrc";
@@ -44,6 +47,7 @@ in
     '';
     shellInit = ''
       export VAULT_TOKEN="$(cat ${config.sops.secrets.vault_token.path})"
+      export ATTIC_TOKEN="$(cat ${config.sops.secrets.attic_token.path})"
       export CACHIX_TOKEN="$(cat ${config.sops.secrets.cachix_token.path})"
       export TOKEN_FILE="${config.sops.secrets.vault_unseal_keys.path}"
     '';

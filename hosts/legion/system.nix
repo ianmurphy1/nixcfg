@@ -24,9 +24,6 @@
     firmware = [
       pkgs.linux-firmware
     ];
-    cpu = {
-      intel.updateMicrocode = true;
-    };
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -47,7 +44,6 @@
     };
   };
   
-  services.thermald.enable = lib.mkDefault true;
 
   networking = {
     networkmanager.enable = true;
