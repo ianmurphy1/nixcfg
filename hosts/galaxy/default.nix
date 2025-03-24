@@ -98,6 +98,7 @@ in
     curl
     wget
     intel-media-driver
+    fwupd
   ];
 
   nix = {

@@ -1,4 +1,12 @@
 { pkgs, ... }:
+let
+  firmware = pkgs.linux-firmware.overrideAttrs (old: {
+    postInstall = ''
+      cp ${ ./firmware/ibt-0190-0291-usb.sfi } $out/lib/firmware/intel/ibt-0190-0291-usb.sfi
+      cp ${ ./firmware/ibt-0190-0291-usb.ddc } $out/lib/firmware/intel/ibt-0190-0291-usb.ddc
+    '';
+  });
+in
 
 {
   boot = {
@@ -19,12 +27,14 @@
     };
   };
 
+  services.fwupd.enable = true;
   services.thermald.enable = true;
 
   hardware = {
     enableRedistributableFirmware = true;
     firmware = [
-      pkgs.linux-firmware
+      #pkgs.linux-firmware
+      firmware
     ];
     cpu = {
       intel.updateMicrocode = true;
