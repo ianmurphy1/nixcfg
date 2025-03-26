@@ -15,6 +15,9 @@
     };
     # Removing lenovo-legion-module until builds on >= 6.14 kernel get fixed
     #extraModulePackages = [ config.boot.kernelPackages.lenovo-legion-module ];
+    kernelParams = [
+      "splash"
+    ];
   };
 
   hardware = {

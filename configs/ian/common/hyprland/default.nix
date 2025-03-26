@@ -1,4 +1,4 @@
-{ osConfig, ... }:
+{ lib, osConfig, ... }:
 let
   hostname = osConfig.networking.hostName;
   wallpaper = {
@@ -25,8 +25,8 @@ in
           kb_variant = euro
         }
         input {
-          ${ if hostname != "legion" then "
-          kb_layout = gb" else ""}
+          ${ lib.optionalString ( hostname != "legion" )
+          "kb_layout = gb"}
           follow_mouse = 2
           numlock_by_default = 1
         

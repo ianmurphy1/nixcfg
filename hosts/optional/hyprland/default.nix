@@ -15,6 +15,9 @@
       enable = true;
     };
   };
+
+  programs.xwayland.enable = true;
+
   environment.systemPackages = with pkgs; [
     hyprpaper
     hyprcursor
@@ -32,5 +35,12 @@
     acpi
     blueman
     adwaita-qt6
+    libsForQt5.qt5ct
+    kdePackages.qt6ct
+    kdePackages.qtwayland
+    glib
+    gsettings-qt
+    xdg-user-dirs
+    xdg-utils
   ];
 }
