@@ -19,8 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
     mysecrets = {
       url = "git+ssh://git@github.com/ianmurphy1/sops-secrets.git?ref=main&shallow=1";
       flake = false;
