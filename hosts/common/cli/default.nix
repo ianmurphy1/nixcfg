@@ -3,7 +3,8 @@
   # Collection of cli tools that didn't really fit
   # into a specific place
   environment.systemPackages = with pkgs; [
-    attic-client
+    libation ntfs3g usbutils
+    openssl
     vault-bin jq jp yq-go fastfetch 
     bat zip bottom zoxide
     unrar unzip sops age

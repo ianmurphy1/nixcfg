@@ -10,6 +10,13 @@
           StrictHostKeyChecking = "accept-new";
         };
       };
+      "*.home" = {
+        host = "*.home";
+        identityFile = "~/.ssh/id_ed25519";
+        extraOptions = {
+          StrictHostKeyChecking = "accept-new";
+        };
+      };
     };
   };
 }

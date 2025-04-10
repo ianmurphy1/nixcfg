@@ -34,4 +34,4 @@ if [[ $_rc -ne 0 ]]; then
 	git -C "${SECRETS_DIR}" push origin main
 fi
 
-scp -q root@${IP}:/etc/nixos/hardware-configuration.nix ./nixos
+[[ ! -f "./nixos/hardware-configuration.nix" ]] && scp -q root@${IP}:/etc/nixos/hardware-configuration.nix ./nixos || exit 0

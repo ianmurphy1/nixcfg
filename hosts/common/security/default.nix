@@ -15,7 +15,7 @@ in
     };
   };
 
-  #services.fprintd = lib.mkIf (hostName == "legion") {
-  #  enable = true;
-  #};
+  services.fprintd = lib.mkIf (hostName == "legion") {
+    enable = true;
+  };
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
 in
@@ -12,6 +12,8 @@ in
       };
     };
   };
+
+  security.pam.services.greetd.fprintAuth = lib.mkForce false;
 
   # this is a life saver.
   # literally no documentation about this anywhere.

@@ -18,6 +18,9 @@ in
     attic_token = {
       owner = "${config.users.users.ian.name}";
     };
+    postgres_pass = {
+      owner = "${config.users.users.ian.name}";
+    };
   };
 
   system.userActivationScripts.zshrc = "touch .zshrc";
@@ -50,6 +53,7 @@ in
       export ATTIC_TOKEN="$(cat ${config.sops.secrets.attic_token.path})"
       export CACHIX_TOKEN="$(cat ${config.sops.secrets.cachix_token.path})"
       export TOKEN_FILE="${config.sops.secrets.vault_unseal_keys.path}"
+      export PGPASSWORD="$(cat ${config.sops.secrets.postgres_pass.path})"
     '';
     ohMyZsh = {
       enable = true;
@@ -70,5 +74,7 @@ in
   environment.variables = {
     VAULT_ADDR = "https://vault.home";
     VAULT_FORMAT = "json";
+    PGHOST = "postgres.home";
+    PGUSER = "postgres";
   };
 }

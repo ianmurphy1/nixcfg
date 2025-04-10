@@ -14,6 +14,7 @@
       enable = true;
     };
   };
+  programs.hyprlock.enable = true;
 
   programs.xwayland.enable = true;
 
