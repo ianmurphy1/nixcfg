@@ -1,13 +1,4 @@
 { pkgs, ... }:
-let
-  firmware = pkgs.linux-firmware.overrideAttrs (old: {
-    postInstall = ''
-      cp ${ ./firmware/ibt-0190-0291-usb.sfi } $out/lib/firmware/intel/ibt-0190-0291-usb.sfi
-      cp ${ ./firmware/ibt-0190-0291-usb.ddc } $out/lib/firmware/intel/ibt-0190-0291-usb.ddc
-    '';
-  });
-in
-
 {
   boot = {
     #kernelPackages = pkgs.linuxPackages_testing;
@@ -33,8 +24,7 @@ in
   hardware = {
     enableRedistributableFirmware = true;
     firmware = [
-      #pkgs.linux-firmware
-      firmware
+      pkgs.linux-firmware
     ];
     cpu = {
       intel.updateMicrocode = true;
