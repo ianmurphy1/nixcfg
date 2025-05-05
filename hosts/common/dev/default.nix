@@ -1,6 +1,10 @@
 # dev.nix
 { pkgs, ... }:
-
+let
+  nodePkgs = with pkgs.nodePackages; [
+    aws-cdk
+  ];
+in
 {
   programs.direnv = {
     package = pkgs.direnv;
@@ -20,6 +24,7 @@
     devenv just
     nixos-generators git-filter-repo
     awscli2
+    argocd
     kubectl
     kustomize
     kubernetes-helm
@@ -28,5 +33,6 @@
     gopls
     postgresql
     gh
-  ];
+    opentofu
+  ] ++ nodePkgs;
 }

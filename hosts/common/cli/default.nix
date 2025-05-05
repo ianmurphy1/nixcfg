@@ -4,7 +4,7 @@
   # into a specific place
   environment.systemPackages = with pkgs; [
     libation ntfs3g usbutils
-    openssl
+    openssl kubelogin-oidc
     vault-bin jq jp yq-go fastfetch 
     bat zip bottom zoxide
     unrar unzip sops age

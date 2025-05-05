@@ -14,7 +14,6 @@ let
     path = ../common/security/ssh-keys;
     ext = "pub";
   };
-
 in
 {
   imports = lib.flatten [
@@ -125,6 +124,7 @@ in
       trusted-public-keys = [
         "ncps.home:6qNYS6mjcO2Ef2VcmIEC7rX4ZMP91PL74oP2cO9JJcU="
       ];
+      extra-platforms = config.boot.binfmt.emulatedSystems;
     };
     optimise.automatic = true;
   };
