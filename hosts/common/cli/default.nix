@@ -14,5 +14,6 @@
     (texlive.combine {
       inherit (texlive) scheme-full;
     })
+    pgcli
   ];
 }

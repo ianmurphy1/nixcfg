@@ -90,8 +90,6 @@ in
     startAgent = true;
   };
 
-  #programs.coolercontrol.enable = true;
-
   services.openssh = {
     enable = true;
     settings = {
