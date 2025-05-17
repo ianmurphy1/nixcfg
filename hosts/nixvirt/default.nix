@@ -27,6 +27,10 @@ in
     inputs.sops-nix.nixosModules.sops
   ];
 
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    WLR_RENDERER_ALLOW_SOFTWARE = "1";
+  };
   sops = {
     age = {
       keyFile = "${homedir}/.config/sops/age/keys.txt";
@@ -97,15 +101,14 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    xorg.xf86videovmware
     git
     zsh
     curl
     wget
     fprintd
     intel-media-driver
-    lenovo-legion
     egl-wayland
-    lm_sensors
   ];
 
   nix = {
