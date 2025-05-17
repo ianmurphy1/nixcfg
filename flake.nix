@@ -41,6 +41,9 @@
         legion = mkSystem "legion" {
           system = "x86_64-linux";
         };
+        nixvirt = mkSystem "nixvirt" {
+          system = "x86_64-linux";
+        };
       };
       darwinConfigurations = {
         nixdarwin = mkSystem "nixdarwin" {

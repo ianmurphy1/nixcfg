@@ -5,6 +5,7 @@ let
     legion = "legion_wp.jpg";
     galaxy = "space.png";
     nixos = "space.png";
+    nixvirt = "space.png";
   };
 in
 {
