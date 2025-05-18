@@ -1,7 +1,8 @@
 { lib, mylib, ...}:
 {
   imports = lib.flatten [
-    (mylib.scanPaths ./.)
-    (import ../common)
+    ../common/kitty
+    ../common/vim
+    ../common/zsh
   ];
 }

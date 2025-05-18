@@ -4,7 +4,7 @@ let
   fontSizes = {
     legion = "16";
     galaxy = "15";
-    nixos = "16";
+    nixos = "12";
     nixvirt = "16";
   };
 in

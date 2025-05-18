@@ -22,7 +22,12 @@ in
     ./hardware-configuration.nix
     ./system.nix
     ../common
-    (mylib.scanPathsExt { path = ../optional; })
+    ../optional/firefox
+    ../optional/fwupd
+    ../optional/lxcsecrets
+    ../optional/nh
+    ../optional/zsh
+    ../optional/theme
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
   ];

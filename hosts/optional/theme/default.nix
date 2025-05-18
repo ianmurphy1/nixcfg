@@ -5,14 +5,10 @@
   environment.variables.GTK_THEME = "volantes-light-cursors";
   environment.variables.XCURSOR_THEME = "Volantes-Light-Cursors";
   environment.variables.XCURSOR_SIZE = "30";
-  console = {
-    earlySetup = true;
-  };
   
   qt = {
     enable = true;
-    platformTheme = "qt5ct";
-    style = "adwaita";
+    #platformTheme = "qt5ct";
   };
 
   # Override packages
