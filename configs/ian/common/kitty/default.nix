@@ -3,6 +3,7 @@ let
   hostname = osConfig.networking.hostName;
   fontSizes = {
     legion = "16";
+    titan = "16";
     galaxy = "15";
     nixos = "12";
     nixvirt = "16";
