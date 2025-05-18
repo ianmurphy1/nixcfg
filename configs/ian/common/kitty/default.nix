@@ -3,7 +3,7 @@ let
   hostname = osConfig.networking.hostName;
   fontSizes = {
     legion = "16";
-    titan = "16";
+    titan = "12";
     galaxy = "15";
     nixos = "12";
     nixvirt = "16";
@@ -20,6 +20,7 @@ in
         
         tab_bar_edge top
         tab_bar_style powerline
+        tab_bar_min_tabs 1
         
         active_tab_foreground #ffffff
         active_tab_background #437019

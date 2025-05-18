@@ -14,8 +14,6 @@
         canTouchEfiVariables = true;
       };
     };
-    # Removing lenovo-legion-module until builds on >= 6.14 kernel get fixed
-    #extraModulePackages = [ config.boot.kernelPackages.lenovo-legion-module ];
     kernelParams = [
       "splash"
     ];
@@ -27,7 +25,7 @@
       pkgs.linux-firmware
     ];
     bluetooth = {
-      enable = true;
+      enable = false;
       powerOnBoot = true;
       settings = {
         General = {
@@ -55,7 +53,7 @@
   i18n.defaultLocale = "en_GB.UTF-8";
   console = {
     earlySetup = true;
-    keyMap = "us";
+    keyMap = "uk";
   };
   system.stateVersion = "25.05"; # Did you read the comment?
 }
