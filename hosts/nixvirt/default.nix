@@ -22,15 +22,13 @@ in
     ./hardware-configuration.nix
     ./system.nix
     ../common
-    (mylib.scanPathsExt { path = ../optional; })
+    ../optional/firefox
+    ../optional/zsh
+    ../optional/nh
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
   ];
 
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    WLR_RENDERER_ALLOW_SOFTWARE = "1";
-  };
   sops = {
     age = {
       keyFile = "${homedir}/.config/sops/age/keys.txt";
