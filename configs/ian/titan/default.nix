@@ -4,5 +4,6 @@
     (mylib.scanPaths ./.)
     ../common/kitty
     ../common/vim
+    ../common/zsh
   ];
 }
