@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   services.xserver = {
-    enable = true;
+    enable = false;
     exportConfiguration = true;
     xkb = {
       layout = "gb";
