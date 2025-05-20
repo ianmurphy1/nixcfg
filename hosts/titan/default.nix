@@ -27,6 +27,7 @@ in
     ../optional/zsh
     ../optional/fwupd
     ../optional/nh
+    ../optional/theme
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
   ];
