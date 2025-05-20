@@ -2,9 +2,9 @@
 
 {
   # Enable Theme
-  environment.variables.GTK_THEME = "volantes-light-cursors";
-  environment.variables.XCURSOR_THEME = "Volantes-Light-Cursors";
-  environment.variables.XCURSOR_SIZE = "30";
+  # environment.variables.GTK_THEME = "volantes-light-cursors";
+  # environment.variables.XCURSOR_THEME = "Volantes-Light-Cursors";
+  # environment.variables.XCURSOR_SIZE = "30";
   
   qt = {
     enable = true;
@@ -17,9 +17,11 @@
   };
 
   environment.systemPackages = with pkgs; [
+    nordic
     numix-icon-theme-circle
     colloid-icon-theme
     adwaita-icon-theme
     volantes-cursors
+    kdePackages.xdg-desktop-portal-kde
   ];
 }
