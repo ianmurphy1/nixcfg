@@ -6,6 +6,10 @@
   # Configs in configs/ian/hyprland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
+  environment.sessionVariables.GTK_THEME = "volantes-light-cursors";
+  environment.sessionVariables.XCURSOR_THEME = "Volantes-Light-Cursors";
+  environment.sessionVariables.XCURSOR_SIZE = "30";
+
   programs.hyprland = {
     enable = true;
     # make sure to also set the portal package, so that they are in sync
@@ -19,6 +23,7 @@
   programs.xwayland.enable = true;
 
   environment.systemPackages = with pkgs; [
+    dunst
     hyprpaper
     hyprcursor
     hyprlock
