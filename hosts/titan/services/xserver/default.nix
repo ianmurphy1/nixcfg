@@ -20,5 +20,7 @@
   environment.systemPackages = with pkgs; [
     xsettingsd
     xorg.xrdb
+    kdePackages.partitionmanager
+    xdg-desktop-portal-gtk
   ];
 }

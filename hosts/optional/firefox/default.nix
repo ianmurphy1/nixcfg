@@ -14,6 +14,8 @@ in
     enable = true;
     preferences = {
       "layout.css.devPixelsPerPx" = scales.${hostName};
+      "font.name.monospace.x-western" = "SauceCodePro Nerd Font";
+      "font.size.monospace.x-western" = 14;
     };
   };
 }
