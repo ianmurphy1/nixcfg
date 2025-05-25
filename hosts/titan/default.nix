@@ -17,9 +17,9 @@ let
 in
 {
   imports = lib.flatten [
-    ./intel
-    ./nvidia
-    ./services
+    (mylib.scanPathsExt {
+      path = ./.;
+    })
     ./hardware-configuration.nix
     ./system.nix
     ../common
@@ -106,7 +106,6 @@ in
     zsh
     curl
     wget
-    intel-media-driver
     egl-wayland
   ];
 
