@@ -20,6 +20,7 @@ in
           "layer": "top", // Waybar at top layer
           "output": "eDP-1",
           "height": 30, // Waybar height (to be removed for auto height)
+          "spacing": 4,
           "modules-left": [
             "user",
             "temperature",
