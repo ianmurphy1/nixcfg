@@ -18,6 +18,7 @@ let
 in
 {
   imports = lib.flatten [
+    ./desktop
     ./services
     ./hardware-configuration.nix
     ./system.nix
@@ -27,7 +28,6 @@ in
     ../optional/lxcsecrets
     ../optional/nh
     ../optional/zsh
-    ../optional/theme
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
   ];
