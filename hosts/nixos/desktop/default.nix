@@ -19,6 +19,7 @@
       enable = true;
       compositor = "kwin";
     };
+    autoNumlock = true;
   };
   services.desktopManager.plasma6.enable = true;
 
