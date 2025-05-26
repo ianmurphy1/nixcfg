@@ -76,8 +76,6 @@ in
             timeout = 3600                              # 1h
             on-timeout = systemctl suspend              # suspend pc
         }
-        
-        # vim: ft=conf
       '';
     };
   };
