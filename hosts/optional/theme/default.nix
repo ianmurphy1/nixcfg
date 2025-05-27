@@ -9,6 +9,7 @@
   qt = {
     enable = true;
     #platformTheme = "qt5ct";
+    style = "breeze";
   };
 
   environment.systemPackages = with pkgs; [

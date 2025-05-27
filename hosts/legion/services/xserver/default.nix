@@ -19,4 +19,9 @@
       pkgs.xdg-desktop-portal
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    kdePackages.breeze
+    kdePackages.breeze-gtk
+  ];
 }

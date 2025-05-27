@@ -5,7 +5,7 @@ let
     nixos = "1.60";
     nixvirt = "1.25";
     galaxy = "1.15";
-    legion = "1.30";
+    legion = "1.25";
     titan = "1.65";
   };
 in
