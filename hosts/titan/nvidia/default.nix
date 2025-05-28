@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 {
   hardware.nvidia = {
     powerManagement.enable = false;

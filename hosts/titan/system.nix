@@ -43,7 +43,6 @@
       };
     };
   };
-  
 
   networking = {
     networkmanager.enable = true;

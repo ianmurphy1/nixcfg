@@ -20,7 +20,7 @@ EOL
 key="${AGE_KEY}" \
 	app="${APP}" \
 	yq -i '.keys += ((.keys[] | select(anchor==env(app)) = env(key)) | .keys)' \
-	/home/ian/dev/secrets/sops/.sops.yaml
+	"${SECRETS_DIR}/.sops.yaml"
 
 sops \
 	--config "${SECRETS_DIR}/.sops.yaml" \

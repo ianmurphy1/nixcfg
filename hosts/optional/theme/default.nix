@@ -13,8 +13,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    nordic
-    adwaita-icon-theme
     volantes-cursors
     kdePackages.xdg-desktop-portal-kde
   ];
