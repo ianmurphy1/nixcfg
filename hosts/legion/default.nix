@@ -104,9 +104,7 @@ in
     wget
     fprintd
     intel-media-driver
-    lenovo-legion
     egl-wayland
-    lm_sensors
   ];
 
   nix = {
