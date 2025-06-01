@@ -12,7 +12,7 @@
       };
     };
     open = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 
   services.xserver.videoDrivers = lib.mkDefault [ "nvidia" ];
