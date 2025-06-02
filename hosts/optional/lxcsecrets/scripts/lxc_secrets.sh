@@ -18,20 +18,20 @@ EOL
 )
 
 key="${AGE_KEY}" \
-	app="${APP}" \
-	yq -i '.keys += ((.keys[] | select(anchor==env(app)) = env(key)) | .keys)' \
-	"${SECRETS_DIR}/.sops.yaml"
+  app="${APP}" \
+  yq -i '(.keys[] | select(anchor==env(app))) = env(key)' \
+  "${SECRETS_DIR}/.sops.yaml"
 
 sops \
-	--config "${SECRETS_DIR}/.sops.yaml" \
-	updatekeys -y "${SECRETS_DIR}/${APP}.secrets.yaml" 2>&1 \
-	| grep "already up to date" \
-	&& _rc=$? \
-	|| _rc=$?
+  --config "${SECRETS_DIR}/.sops.yaml" \
+  updatekeys -y "${SECRETS_DIR}/${APP}.secrets.yaml" 2>&1 \
+  | grep "already up to date" \
+  && _rc=$? \
+  || _rc=$?
 
 if [[ $_rc -ne 0 ]]; then
-	git -C "${SECRETS_DIR}" commit -am "${APP} secret key updated"
-	git -C "${SECRETS_DIR}" push origin main
+  git -C "${SECRETS_DIR}" commit -am "${APP} secret key updated"
+  git -C "${SECRETS_DIR}" push origin main
 fi
 
 [[ ! -f "./nixos/hardware-configuration.nix" ]] && scp -q root@${IP}:/etc/nixos/hardware-configuration.nix ./nixos || exit 0
