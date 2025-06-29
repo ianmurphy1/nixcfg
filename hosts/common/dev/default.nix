@@ -34,5 +34,7 @@ in
     postgresql
     gh
     opentofu
+    pulumi
+    pulumiPackages.pulumi-nodejs
   ] ++ nodePkgs;
 }
