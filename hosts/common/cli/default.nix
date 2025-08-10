@@ -15,5 +15,6 @@
       inherit (texlive) scheme-full;
     })
     pgcli
+    nodePackages.cdktf-cli
   ];
 }
