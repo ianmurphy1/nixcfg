@@ -4,8 +4,7 @@
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     #kernelPackages = pkgs.linuxPackages_testing;
-    #kernelPackages = pkgs.linuxPackages_latest;
-    kernelPackages = pkgs.linuxPackages_6_15;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = true;
@@ -60,5 +59,5 @@
     earlySetup = true;
     keyMap = "uk";
   };
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 }
