@@ -14,7 +14,7 @@
     (texlive.combine {
       inherit (texlive) scheme-full;
     })
-    pgcli
+    pgcli dig
     nodePackages.cdktf-cli
   ];
 }
