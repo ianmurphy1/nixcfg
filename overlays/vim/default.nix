@@ -13,7 +13,7 @@ let
   base_plugins = with vimPlugins; [
     vim-fugitive vim-just
     vim-nix vimtex
-    gitgutter
+    vim-gitgutter vim-commentary
     jellybeans-vim
     vim-airline
     vim-airline-themes
