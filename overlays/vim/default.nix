@@ -1,5 +1,7 @@
 final: prev:
 let
+  other = with prev; [
+  ];
   vimPlugins = prev.vimPlugins;
   autocomplete_plugins = with vimPlugins; [
     coc-nvim
@@ -29,7 +31,7 @@ in
   vim-full = (prev.vim-full.override {}).customize {
     name = "vim";
     vimrcConfig.packages.custom = {
-      start = base_plugins ++ autocomplete_plugins;
+      start = other ++ base_plugins ++ autocomplete_plugins;
       opt = [ ];
     };
     # Proper VIM loading seems to be borked
