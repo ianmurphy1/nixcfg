@@ -60,8 +60,8 @@ in
       export CACHIX_TOKEN="$(cat ${config.sops.secrets.cachix_token.path})"
       export TOKEN_FILE="${config.sops.secrets.vault_unseal_keys.path}"
       export PGPASSWORD="$(cat ${config.sops.secrets.postgres_pass.path})"
-      export TF_TOKEN_app_terraform_io="$(cat ${config.sops.secrets.terraform_cloud_api_key.path})"
-      export TF_TOKEN="''${TF_TOKEN_app_terraform_io}"
+      export TFE_TOKEN_app_terraform_io="$(cat ${config.sops.secrets.terraform_cloud_api_key.path})"
+      export TFE_TOKEN="''${TFE_TOKEN_app_terraform_io}"
       export CLOUDFLARE_SECRET_KEY="$(cat ${config.sops.secrets.cloudflare_r2_api_token.path})"
     '';
     ohMyZsh = {
