@@ -30,6 +30,20 @@ in
       type = lib.types.listOf (lib.types.str);
       description = "List of plugins to enable";
     };
+
+    ohMyZsh = lib.mkOption {
+      type = lib.types.submodule {
+        options = {
+          enable = lib.mkEnableOption "antidote-oh-my-zsh";
+
+          plugins = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [];
+            description = "List of oh-my-zsh plugins to enable";
+          };
+        };
+      };
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -41,6 +55,7 @@ in
       let 
         configs = pkgs.runCommand "antidote-files" {} ''
           echo "${pluginString cfg.plugins}" > $out
+          echo "${pluginString cfg.ohMyZsh.plugins}" > $out
         '';
         hashId = parseHashId "${configs}";
       in
