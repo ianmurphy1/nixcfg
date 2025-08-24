@@ -31,19 +31,14 @@ in
       description = "List of plugins to enable";
     };
 
-    ohMyZsh = lib.mkOption {
-      default = {};
-      type = lib.types.submodule {
-        options = {
-          enable = lib.mkEnableOption "antidote-oh-my-zsh";
+    enableOhMyZsh = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
 
-          plugins = lib.mkOption {
-            type = lib.types.listOf (lib.types.str);
-            default = [];
-            description = "List of oh-my-zsh plugins to enable";
-          };
-        };
-      };
+    enablePowerlevel10k = lib.mkOption {
+      type = lib.types.bool;
+      default = lib.types.bool;
     };
   };
 
@@ -54,9 +49,9 @@ in
 
     programs.zsh.interactiveShellInit = 
       let 
-        allPlugins = cfg.plugins
-          ++ lib.optionals (cfg.ohMyZsh.enable) [ "getantidote/use-omz" ]
-          ++ lib.optionals (cfg.ohMyZsh.enable) cfg.ohMyZsh.plugins;
+        allPlugins = lib.optional cfg.enableOhMyZsh "getantidote/use-omz"
+          ++ lib.optional cfg.enablePowerlevel10k "romkatv/powerlevel10k kind:fpath"
+          ++ cfg.plugins;
         
         configs = pkgs.runCommand "antidote-files" {} ''
           echo "${pluginString allPlugins}" > $out
@@ -74,6 +69,10 @@ in
         zstyle ':antidote:static' file $staticfile
 
         antidote load $bundlefile $staticfile
+
+        ${lib.optionalString cfg.enablePowerlevel10k "
+        autoload -Uz promptinit && promptinit && prompt powerlevel10k
+        "}
       '');
   };
 

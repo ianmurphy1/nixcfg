@@ -32,6 +32,22 @@ in
   system.userActivationScripts.zshrc = "touch .zshrc";
 
   programs.zsh = {
+    antidote = {
+      enable = true;
+      plugins = [
+        "zdharma-continuum/fast-syntax-highlighting kind:defer"
+        "zsh-users/zsh-autosuggestions kind:defer"
+        "zsh-users/zsh-history-substring-search kind:defer"
+        "chisui/zsh-nix-shell"
+        "ohmyzsh/ohmyzsh path:plugins/git"
+        "ohmyzsh/ohmyzsh path:plugins/aws"
+        "ohmyzsh/ohmyzsh path:plugins/direnv"
+        "ohmyzsh/ohmyzsh path:plugins/terraform"
+        "ohmyzsh/ohmyzsh path:plugins/opentofu"
+      ];
+      enablePowerlevel10k = true;
+      enableOhMyZsh = true;
+    };
     enable = true;
     histSize = 10000;
     enableCompletion = true;
@@ -49,9 +65,9 @@ in
       config = "cd ${nixosConfig}";
     };
     interactiveShellInit = ''
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
-      source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
-      source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
+      #source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
+      #source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
+      #source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
       eval "$(${lib.getExe pkgs.zoxide} init zsh --cmd cd)"
     '';
     shellInit = ''
@@ -65,7 +81,7 @@ in
       export CLOUDFLARE_SECRET_KEY="$(cat ${config.sops.secrets.cloudflare_r2_api_token.path})"
     '';
     ohMyZsh = {
-      enable = true;
+      enable = false;
       theme = "robbyrussell";
       plugins = [
         "aws"
