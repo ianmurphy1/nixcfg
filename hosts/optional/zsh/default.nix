@@ -33,7 +33,7 @@ in
 
   programs.zsh = {
     antidote = {
-      enable = true;
+      enable = false;
       plugins = [
         "zdharma-continuum/fast-syntax-highlighting kind:defer"
         "zsh-users/zsh-autosuggestions kind:defer"
@@ -44,6 +44,7 @@ in
         "ohmyzsh/ohmyzsh path:plugins/direnv"
         "ohmyzsh/ohmyzsh path:plugins/terraform"
         "ohmyzsh/ohmyzsh path:plugins/opentofu"
+        "belak/zsh-utils path:history"
       ];
       enablePowerlevel10k = true;
       enableOhMyZsh = true;
@@ -65,9 +66,9 @@ in
       config = "cd ${nixosConfig}";
     };
     interactiveShellInit = ''
-      #source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
-      #source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
-      #source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
+      source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
+      source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
       eval "$(${lib.getExe pkgs.zoxide} init zsh --cmd cd)"
     '';
     shellInit = ''
@@ -81,7 +82,7 @@ in
       export CLOUDFLARE_SECRET_KEY="$(cat ${config.sops.secrets.cloudflare_r2_api_token.path})"
     '';
     ohMyZsh = {
-      enable = false;
+      enable = true;
       theme = "robbyrussell";
       plugins = [
         "aws"

@@ -73,6 +73,7 @@ in
         ${lib.optionalString cfg.enablePowerlevel10k "
         autoload -Uz promptinit && promptinit && prompt powerlevel10k
         "}
+        autoload -Uz compinit && compinit
       '');
   };
 
