@@ -9,12 +9,12 @@ let
 
   pluginString = (
     pluginNames:
-    lib.optionalString (pluginNames != [])
-      "${lib.concatStrings (
-        map (name: ''
-          ${name}
-        '') pluginNames
-      )}"
+      lib.optionalString ( pluginNames != [])
+        "${lib.concatStrings (
+          map (name: ''
+            ${name}
+          '') pluginNames
+        )}"
   );
 
   parseHashId = path: lib.elemAt (builtins.match "${builtins.storeDir}/([a-zA-Z0-9]+)-.*" path) 0;
@@ -32,12 +32,13 @@ in
     };
 
     ohMyZsh = lib.mkOption {
+      default = {};
       type = lib.types.submodule {
         options = {
           enable = lib.mkEnableOption "antidote-oh-my-zsh";
 
           plugins = lib.mkOption {
-            type = lib.types.listOf lib.types.str;
+            type = lib.types.listOf (lib.types.str);
             default = [];
             description = "List of oh-my-zsh plugins to enable";
           };
@@ -53,10 +54,14 @@ in
 
     programs.zsh.interactiveShellInit = 
       let 
+        allPlugins = cfg.plugins
+          ++ lib.optionals (cfg.ohMyZsh.enable) [ "getantidote/use-omz" ]
+          ++ lib.optionals (cfg.ohMyZsh.enable) cfg.ohMyZsh.plugins;
+        
         configs = pkgs.runCommand "antidote-files" {} ''
-          echo "${pluginString cfg.plugins}" > $out
-          echo "${pluginString cfg.ohMyZsh.plugins}" > $out
+          echo "${pluginString allPlugins}" > $out
         '';
+
         hashId = parseHashId "${configs}";
       in
       (lib.mkOrder 400 ''
