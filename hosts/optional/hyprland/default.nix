@@ -34,7 +34,7 @@
     waybar
     wl-clipboard
     cliphist
-    nwg-displays
+    #nwg-displays
     nwg-look
     brightnessctl
     acpi

@@ -45,6 +45,8 @@ in
         "ohmyzsh/ohmyzsh path:plugins/terraform"
         "ohmyzsh/ohmyzsh path:plugins/opentofu"
         "belak/zsh-utils path:history"
+        "belak/zsh-utils path:editor"
+        "belak/zsh-utils path:utility"
       ];
       enablePowerlevel10k = true;
       enableOhMyZsh = true;
@@ -56,7 +58,9 @@ in
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     promptInit = ''
+      # promptInit: START
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+      # promptInit: END
     '';
     shellAliases = {
       ssh = "kitten ssh";
@@ -66,10 +70,12 @@ in
       config = "cd ${nixosConfig}";
     };
     interactiveShellInit = ''
+      # interactiveShellInit: START
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
       source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
       source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
       eval "$(${lib.getExe pkgs.zoxide} init zsh --cmd cd)"
+      # interactiveShellInit: START
     '';
     shellInit = ''
       export VAULT_TOKEN="$(cat ${config.sops.secrets.vault_token.path})"

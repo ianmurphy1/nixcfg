@@ -7,6 +7,7 @@
     userEmail = "iano200@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
+      pager.branch = false;
     };
     signing = {
       format = "ssh";

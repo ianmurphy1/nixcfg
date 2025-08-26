@@ -50,7 +50,7 @@ in
     programs.zsh.interactiveShellInit = 
       let 
         allPlugins = lib.optional cfg.enableOhMyZsh "getantidote/use-omz"
-          ++ lib.optional cfg.enablePowerlevel10k "romkatv/powerlevel10k kind:fpath"
+          ++ lib.optional cfg.enablePowerlevel10k "romkatv/powerlevel10k"
           ++ cfg.plugins;
         
         configs = pkgs.runCommand "antidote-files" {} ''
@@ -74,6 +74,7 @@ in
         autoload -Uz promptinit && promptinit && prompt powerlevel10k
         "}
         autoload -Uz compinit && compinit
+        autoload -U +X bashcompinit && bashcompinit
       '');
   };
 
