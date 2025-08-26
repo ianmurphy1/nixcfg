@@ -6,9 +6,9 @@
   # Configs in configs/ian/hyprland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
-  environment.sessionVariables.GTK_THEME = "volantes-light-cursors";
-  environment.sessionVariables.XCURSOR_THEME = "Volantes-Light-Cursors";
-  environment.sessionVariables.XCURSOR_SIZE = "30";
+  environment.sessionVariables.GTK_THEME = "breeze-light";
+  environment.sessionVariables.XCURSOR_THEME = "Breeze-Light";
+  environment.sessionVariables.XCURSOR_SIZE = "26";
 
   programs.hyprland = {
     enable = true;
