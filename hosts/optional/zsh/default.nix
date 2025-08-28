@@ -36,8 +36,6 @@ in
       enable = false;
       plugins = [
         "zdharma-continuum/fast-syntax-highlighting kind:defer"
-        "zsh-users/zsh-autosuggestions kind:defer"
-        "zsh-users/zsh-history-substring-search kind:defer"
         "chisui/zsh-nix-shell"
         "ohmyzsh/ohmyzsh path:plugins/git"
         "ohmyzsh/ohmyzsh path:plugins/aws"
@@ -47,6 +45,8 @@ in
         "belak/zsh-utils path:history"
         "belak/zsh-utils path:editor"
         "belak/zsh-utils path:utility"
+        "zsh-users/zsh-autosuggestions"
+        "zsh-users/zsh-history-substring-search"
       ];
       enablePowerlevel10k = true;
       enableOhMyZsh = true;

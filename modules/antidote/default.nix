@@ -38,7 +38,7 @@ in
 
     enablePowerlevel10k = lib.mkOption {
       type = lib.types.bool;
-      default = lib.types.bool;
+      default = false;
     };
   };
 
@@ -60,7 +60,9 @@ in
         hashId = parseHashId "${configs}";
       in
       (lib.mkOrder 400 ''
+        # ANTIDOTE: interactiveShellInit: START
         source ${cfg.package}/share/antidote/antidote.zsh
+
 
         bundlefile=${configs}        
 
@@ -69,12 +71,11 @@ in
         zstyle ':antidote:static' file $staticfile
 
         antidote load $bundlefile $staticfile
-
         ${lib.optionalString cfg.enablePowerlevel10k "
-        autoload -Uz promptinit && promptinit && prompt powerlevel10k
+        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
         "}
-        autoload -Uz compinit && compinit
-        autoload -U +X bashcompinit && bashcompinit
+
+        # ANTIDOTE: interactiveShellInit: END
       '');
   };
 
