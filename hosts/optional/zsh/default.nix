@@ -37,14 +37,17 @@ in
       plugins = [
         "zdharma-continuum/fast-syntax-highlighting kind:defer"
         "chisui/zsh-nix-shell"
+
         "ohmyzsh/ohmyzsh path:plugins/git"
         "ohmyzsh/ohmyzsh path:plugins/aws"
         "ohmyzsh/ohmyzsh path:plugins/direnv"
         "ohmyzsh/ohmyzsh path:plugins/terraform"
         "ohmyzsh/ohmyzsh path:plugins/opentofu"
+
         "belak/zsh-utils path:history"
         "belak/zsh-utils path:editor"
         "belak/zsh-utils path:utility"
+
         "zsh-users/zsh-autosuggestions"
         "zsh-users/zsh-history-substring-search"
       ];
@@ -75,7 +78,7 @@ in
       source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
       source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
       eval "$(${lib.getExe pkgs.zoxide} init zsh --cmd cd)"
-      # interactiveShellInit: START
+      # interactiveShellInit: END
     '';
     shellInit = ''
       export VAULT_TOKEN="$(cat ${config.sops.secrets.vault_token.path})"
