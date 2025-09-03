@@ -71,6 +71,7 @@ in
       update = "nix flake update --flake ${nixosConfig}/.#";
       garbage = "nh clean all -k 5 -K 5d";
       config = "cd ${nixosConfig}";
+      myip = "dig @resolver1.opendns.com myip.opendns.com +short";
     };
     interactiveShellInit = ''
       # interactiveShellInit: START
