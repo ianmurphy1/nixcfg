@@ -63,5 +63,5 @@
     earlySetup = true;
     keyMap = "us";
   };
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 }
