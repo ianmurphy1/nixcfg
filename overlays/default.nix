@@ -2,5 +2,5 @@
 [
   (import ./vim)
   (import ./unseal-vault)
-  (import ./i3ipc)
+  # (import ./i3ipc)
 ]
