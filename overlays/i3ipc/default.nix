@@ -1,3 +1,4 @@
+# No longer required as fixed in nixpkgs
 final: prev: {
   python313Packages = prev.python313Packages // {
     i3ipc = prev.python313Packages.i3ipc.overrideAttrs (old: {
