@@ -28,7 +28,7 @@
     hyprcursor
     hyprlock
     hypridle
-    rofi-wayland
+    rofi #-wayland
     qt5.qtwayland
     qt6.qtwayland
     waybar
