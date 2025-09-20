@@ -46,15 +46,17 @@ in
   users.users.${username} = {
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets.user_pass.path;
-    extraGroups = [
-      "render"
-      "wheel"
-      "networkmanager"
-      "audio"
-      "video"
-      "input"
-      "docker"
-    ];
+    extraGroups = 
+      let
+        dockerEnabled = config.virtualisation.docker.enable;
+      in [
+        "render"
+        "wheel"
+        "networkmanager"
+        "audio"
+        "video"
+        "input"
+      ] ++ lib.optionals dockerEnabled [ "docker" ];
     shell = pkgs.zsh;
     openssh = {
       authorizedKeys = {

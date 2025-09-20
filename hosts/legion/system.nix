@@ -3,7 +3,7 @@
 {
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
-    #kernelPackages = pkgs.linuxPackages_testing;
+    # kernelPackages = pkgs.linuxPackages_testing;
     kernelPackages = pkgs.linuxPackages_latest;
     #kernelPackages = pkgs.linuxPackages_6_14;
     loader = {
