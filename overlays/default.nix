@@ -2,5 +2,6 @@
 [
   (import ./vim)
   (import ./unseal-vault)
+  # (import ./brlaser)
   # (import ./i3ipc)
 ]

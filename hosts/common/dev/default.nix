@@ -18,12 +18,10 @@ in
     };
   };
 
-  #virtualisation.docker.enable = true;
-
   environment.systemPackages = with pkgs; [
     devenv just
     nixos-generators git-filter-repo
-    awscli2
+    # awscli2
     argocd
     kubectl
     kustomize
