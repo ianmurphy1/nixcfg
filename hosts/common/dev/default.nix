@@ -4,6 +4,10 @@ let
   nodePkgs = with pkgs.nodePackages; [
     aws-cdk
   ];
+
+  unstablePkgs = with pkgs.unstable; [
+    # awscli2
+  ];
 in
 {
   programs.direnv = {
@@ -21,7 +25,7 @@ in
   environment.systemPackages = with pkgs; [
     devenv just
     nixos-generators git-filter-repo
-    # awscli2
+    awscli2
     argocd
     kubectl
     kustomize
@@ -35,5 +39,6 @@ in
     terraform
     pulumi
     pulumiPackages.pulumi-nodejs
-  ] ++ nodePkgs;
+  ] ++ nodePkgs
+    ++ unstablePkgs;
 }
