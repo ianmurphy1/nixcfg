@@ -90,10 +90,12 @@ in
 
   programs.ssh = {
     startAgent = true;
+    package = pkgs.openssh_hpn;
   };
 
   services.openssh = {
     enable = true;
+    package = pkgs.openssh_hpn;
     settings = {
       PasswordAuthentication = true;
     };
