@@ -2,7 +2,7 @@
 {
   programs.git = {
     enable = true;
-    package = pkgs.gitAndTools.gitFull;
+    package = pkgs.gitFull;
     settings = {
       user = {
         email = "iano200@gmail.com";
