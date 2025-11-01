@@ -3,6 +3,7 @@ let
   hostname = osConfig.networking.hostName;
   wallpaper = {
     legion = "legion_wp.jpg";
+    titan = "legion_wp.jpg";
     galaxy = "space.png";
     nixos = "space.png";
     nixvirt = "space.png";

@@ -17,10 +17,13 @@ let
 in
 {
   imports = lib.flatten [
-    (mylib.scanPathsExt { path = ../optional; })
+    ./intel
+    ./nvidia
+    ./services
     ./hardware-configuration.nix
     ./system.nix
     ../common
+    (mylib.scanPathsExt { path = ../optional; })
     # ../optional/firefox
     # ../optional/zsh
     # ../optional/fwupd

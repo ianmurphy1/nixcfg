@@ -5,5 +5,6 @@
     ./pipewire
     ./udev
     ./xserver
+    ./greetd
   ];
 }
