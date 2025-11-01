@@ -17,17 +17,15 @@ let
 in
 {
   imports = lib.flatten [
-    (mylib.scanPathsExt {
-      path = ./.;
-    })
+    (mylib.scanPathsExt { path = ../optional; })
     ./hardware-configuration.nix
     ./system.nix
     ../common
-    ../optional/firefox
-    ../optional/zsh
-    ../optional/fwupd
-    ../optional/nh
-    ../optional/theme
+    # ../optional/firefox
+    # ../optional/zsh
+    # ../optional/fwupd
+    # ../optional/nh
+    # ../optional/theme
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
   ];
