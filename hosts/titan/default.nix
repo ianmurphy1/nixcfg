@@ -24,11 +24,6 @@ in
     ./system.nix
     ../common
     (mylib.scanPathsExt { path = ../optional; })
-    # ../optional/firefox
-    # ../optional/zsh
-    # ../optional/fwupd
-    # ../optional/nh
-    # ../optional/theme
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
   ];
