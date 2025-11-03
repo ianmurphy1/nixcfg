@@ -1,6 +1,13 @@
 { osConfig, ... }:
 let
   hostname = osConfig.networking.hostName;
+  display = {
+    galaxy = "eDP-1";
+    nixos = "eDP-1";
+    nixvirt = "eDP-1";
+    legion = "eDP-1";
+    titan = "DP-2";
+  };
   thermalZones = {
     galaxy = "7";
     nixos = "6";
@@ -19,7 +26,7 @@ in
       text = ''
         {
           "layer": "top", // Waybar at top layer
-          "output": "eDP-1",
+          "output": "${display."${hostname}"}",
           "height": 30, // Waybar height (to be removed for auto height)
           "spacing": 4,
           "modules-left": [
