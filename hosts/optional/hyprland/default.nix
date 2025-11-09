@@ -1,5 +1,5 @@
 # hyprland.nix
-{ pkgs, inputs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # Enable Hyprland and install related pkgs
@@ -8,7 +8,7 @@
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
   environment.sessionVariables.GTK_THEME = "breeze-light";
   environment.sessionVariables.XCURSOR_THEME = "Breeze-Light";
-  environment.sessionVariables.XCURSOR_SIZE = "26";
+  environment.sessionVariables.XCURSOR_SIZE = lib.mkDefault "26";
 
   programs.hyprland = {
     enable = true;

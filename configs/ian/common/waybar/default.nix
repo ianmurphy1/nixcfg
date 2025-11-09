@@ -22,7 +22,7 @@ in
       source = ./config;
       recursive = true;
     };
-    ".config/waybar/config.jsonc" = {
+    ".config/waybar/config.jsonc" = lib.mkDefault {
       text = ''
         {
           "layer": "top", // Waybar at top layer

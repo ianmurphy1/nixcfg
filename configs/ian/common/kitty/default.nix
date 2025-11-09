@@ -1,4 +1,4 @@
-{ osConfig, ... }:
+{ osConfig, lib, ... }:
 let
   hostname = osConfig.networking.hostName;
   fontSizes = {
@@ -11,7 +11,7 @@ let
 in
 {
   home.file = {
-    ".config/kitty/kitty.conf" = {
+    ".config/kitty/kitty.conf" = lib.mkDefault {
       text = ''
         font_family SauceCodePro Nerd Font
         font_size ${fontSizes."${hostname}"}

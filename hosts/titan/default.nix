@@ -22,6 +22,7 @@ in
     ./services
     ./hardware-configuration.nix
     ./system.nix
+    ./overrides.nix
     ../common
     (mylib.scanPathsExt { path = ../optional; })
     inputs.home-manager.nixosModules.home-manager
