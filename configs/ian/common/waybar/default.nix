@@ -1,4 +1,4 @@
-{ osConfig, ... }:
+{ lib, osConfig, ... }:
 let
   hostname = osConfig.networking.hostName;
   display = {
@@ -18,7 +18,7 @@ let
 in
 {
   home.file = {
-    ".config/waybar" = {
+    ".config/waybar" = lib.mkDefault {
       source = ./config;
       recursive = true;
     };
