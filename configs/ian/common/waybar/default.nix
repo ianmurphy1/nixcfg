@@ -13,7 +13,7 @@ let
     nixos = "6";
     nixvirt = "6";
     legion = "9";
-    titan = "9";
+    titan = "1";
   };
 in
 {

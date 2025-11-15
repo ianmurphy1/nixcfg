@@ -89,10 +89,12 @@ in
 
   programs.ssh = {
     startAgent = true;
+    package = pkgs.openssh_hpn;
   };
 
   services.openssh = {
     enable = true;
+    package = pkgs.openssh_hpn;
     settings = {
       PasswordAuthentication = true;
     };
@@ -125,7 +127,11 @@ in
   };
 
   nixpkgs = {
-    overlays = localOverlays;
+    overlays = [
+      (final: prev: {
+        unstable = inputs.nixpkgs-unstable.legacyPackages.${prev.system};
+      })
+    ] ++ localOverlays;
     
     config = {
       allowBroken = true;
