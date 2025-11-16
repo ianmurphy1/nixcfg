@@ -146,12 +146,12 @@ in
             "format-bluetooth-muted": "󰝟  {icon} {format_source}",
             "format-muted": " ",
             "format-icons": {
-              //            "headphone": "",
-              //            "hands-free": "",
-              //            "headset": "",
-              //            "phone": "",
-              //            "portable": "",
-              //            "car": "",
+              // "headphone": "",
+              // "hands-free": "",
+              // "headset": "",
+              // "phone": "",
+              // "portable": "",
+              // "car": "",
               "default": [" ", " ", " "]
             },
             "on-click": "pamixer -t",
