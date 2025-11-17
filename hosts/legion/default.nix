@@ -1,6 +1,7 @@
 { config, pkgs, inputs, nur, lib, myvars, mylib, ...}:
 
 let
+  system = pkgs.stdenv.hostPlatform.system;
   secretspath = builtins.toString inputs.mysecrets;
   username = myvars.username;
   user = config.users.users."${username}";
@@ -132,7 +133,7 @@ in
   nixpkgs = {
     overlays = [
       (final: prev: {
-        unstable = inputs.nixpkgs-unstable.legacyPackages.${prev.system};
+        unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
       })
     ] ++ localOverlays;
     
