@@ -31,6 +31,7 @@ in
     kustomize
     kubernetes-helm
     #docker
+    ipcalc
     act
     gopls
     postgresql

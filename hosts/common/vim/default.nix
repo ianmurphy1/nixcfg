@@ -5,6 +5,7 @@
     nodejs
     nixd
   ];
+
   environment.variables = {
     EDITOR = "vim";
   };
