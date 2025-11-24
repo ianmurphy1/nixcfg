@@ -6,7 +6,7 @@ let
   ];
 
   unstablePkgs = with pkgs.unstable; [
-    # awscli2
+    awscli2
   ];
 in
 {
@@ -25,7 +25,7 @@ in
   environment.systemPackages = with pkgs; [
     devenv just
     nixos-generators git-filter-repo
-    awscli2
+    # awscli2
     argocd
     kubectl
     kustomize
