@@ -130,7 +130,10 @@ in
   nixpkgs = {
     overlays = [
       (final: prev: {
-        unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
+        unstable = import inputs.nixpkgs-unstable {
+          system = prev.stdenv.hostPlatform.system;
+          config.allowUnfree = true;
+        };
       })
     ] ++ localOverlays;
     
