@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   boot = {
@@ -56,5 +56,6 @@
     earlySetup = true;
     keyMap = "uk";
   };
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
+  environment.systemPackages = [ pkgs.wireguard-tools ];
 }

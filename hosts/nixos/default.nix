@@ -1,6 +1,7 @@
 { config, pkgs, inputs, nur, lib, myvars, mylib, ...}:
 
 let
+  system = pkgs.stdenv.hostPlatform.system;
   secretspath = builtins.toString inputs.mysecrets;
   username = myvars.username;
   user = config.users.users."${username}";
@@ -127,7 +128,16 @@ in
   };
 
   nixpkgs = {
-    overlays = localOverlays;
+    overlays = [
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          system = system;
+          config = {
+            allowUnfree = true;
+          };
+        };
+      })
+    ] ++ localOverlays;
     
     config = {
       allowBroken = true;
