@@ -101,6 +101,7 @@ in
         "rust"
         "terraform"
         "opentofu"
+        "kubectl"
       ];
     };
   };
