@@ -4,7 +4,7 @@ let
 in
 {
   services.greetd = {
-    enable = false;
+    enable = true;
     settings = {
       default_session = {
         command = "${tuigreet} --asterisks --time --remember --cmd Hyprland";

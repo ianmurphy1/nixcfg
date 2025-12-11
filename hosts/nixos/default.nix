@@ -19,16 +19,11 @@ let
 in
 {
   imports = lib.flatten [
-    ./desktop
     ./services
     ./hardware-configuration.nix
     ./system.nix
     ../common
-    ../optional/firefox
-    ../optional/fwupd
-    ../optional/lxcsecrets
-    ../optional/nh
-    ../optional/zsh
+    (mylib.scanPathsExt { path = ../optional; })
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
   ];
@@ -47,6 +42,8 @@ in
       };
     };
   };
+
+  programs.steam.enable = lib.mkForce false;
 
   users.users.${username} = {
     isNormalUser = true;

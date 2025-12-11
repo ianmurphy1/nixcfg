@@ -1,9 +1,4 @@
 { mylib, ... }:
 {
-  imports = [
-    ./cups
-    ./pipewire
-    ./udev
-    ./xserver
-  ];
+  imports = (mylib.scanPaths ./.);
 }
