@@ -76,6 +76,8 @@ in
             "rewrite": {
               "(firefox)@@@(.*) — Mozilla Firefox.*": "  $2",
               "firefox@@@Mozilla Firefox.*": "  firefox",
+              "(librewolf)@@@(.*) — LibreWolf.*": "$2",
+              "librewolf@@@LibreWolf.*": "librewolf",
               //"(kitty)@@@(.*)": " $2",
               "(kitty)@@@vim (.*)": " $2",
               "(kitty)@@@(?!vim)(.*)": "  $2",
