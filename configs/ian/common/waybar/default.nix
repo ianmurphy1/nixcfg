@@ -77,7 +77,7 @@ in
               "(firefox)@@@(.*) — Mozilla Firefox.*": "  $2",
               "firefox@@@Mozilla Firefox.*": "  firefox",
               "(librewolf)@@@(.*) — LibreWolf.*": "$2",
-              "librewolf@@@LibreWolf.*": "librewolf",
+              "librewolf@@@LibreWolf.*": "LibreWolf",
               //"(kitty)@@@(.*)": " $2",
               "(kitty)@@@vim (.*)": " $2",
               "(kitty)@@@(?!vim)(.*)": "  $2",
