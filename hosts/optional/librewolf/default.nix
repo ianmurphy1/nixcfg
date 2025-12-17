@@ -12,6 +12,9 @@ in
 {
   programs.firefox = {
     package = pkgs.librewolf;
+    languagePacks = [
+      "en-GB"
+    ];
     enable = true;
     policies = {
       AutofillAddressEnabled = false;
@@ -34,8 +37,8 @@ in
       "privacy.trackingprotection.fingerprinting.enabled" = true;
       "privacy.trackingprotection.socialtracking.enabled" = true;
       "layout.css.devPixelsPerPx" = scales.${hostName};
-    } // lib.optionalAttrs (hostName == "titan") {
       "font.name.monospace.x-western" = "SauceCodePro Nerd Font";
+    } // lib.optionalAttrs (hostName == "titan") {
       "font.size.monospace.x-western" = 14;
       "font.minimum-size.x-western" = 14;
     };

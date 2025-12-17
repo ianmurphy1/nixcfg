@@ -78,6 +78,8 @@ in
               "firefox@@@Mozilla Firefox.*": "  firefox",
               "(librewolf)@@@(.*) — LibreWolf.*": "$2",
               "librewolf@@@LibreWolf.*": "LibreWolf",
+              "(thunderbird)@@@(.*) — Mozilla Thunderbird.*": "  $2",
+              "thunderbird@@@Mozilla Thunderbird.*": "  Thunderbird",
               //"(kitty)@@@(.*)": " $2",
               "(kitty)@@@vim (.*)": " $2",
               "(kitty)@@@(?!vim)(.*)": "  $2",

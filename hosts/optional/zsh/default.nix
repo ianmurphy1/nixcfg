@@ -78,10 +78,15 @@ in
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
       source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
       source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
+      source <(${lib.getExe pkgs.sops} completion zsh)
       eval "$(${lib.getExe pkgs.zoxide} init zsh --cmd cd)"
       # interactiveShellInit: END
     '';
     shellInit = ''
+      export AWS_DEFAULT_SSO_START_URL=https://d-936792958b.awsapps.com/start
+      export AWS_DEFAULT_SSO_REGION=eu-west-1
+      export AWS_DEFAULT_REGION=eu-west-1
+      export AWS_PROFILE=sso
       export VAULT_TOKEN="$(cat ${config.sops.secrets.vault_token.path})"
       export ATTIC_TOKEN="$(cat ${config.sops.secrets.attic_token.path})"
       export CACHIX_TOKEN="$(cat ${config.sops.secrets.cachix_token.path})"

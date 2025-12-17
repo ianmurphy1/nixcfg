@@ -13,7 +13,11 @@ in
     };
   };
 
+  services.gnome.gnome-keyring.enable = true;
+  services.gnome.gcr-ssh-agent.enable = false;
+
   security.pam.services.greetd.fprintAuth = lib.mkForce false;
+  security.pam.services.greetd.enableGnomeKeyring = true;
 
   # this is a life saver.
   # literally no documentation about this anywhere.

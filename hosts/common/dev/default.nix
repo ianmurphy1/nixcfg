@@ -7,6 +7,7 @@ let
 
   unstablePkgs = with pkgs.unstable; [
     awscli2
+    aws-sso-util
   ];
 in
 {
