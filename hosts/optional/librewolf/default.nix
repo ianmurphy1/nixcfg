@@ -44,7 +44,7 @@ in
     };
   };
 
-  environment.systemPackages = [ pkgs.firefox ];
+  # environment.systemPackages = [ pkgs.firefox ];
 
   environment.etc."firefox/policies/policies.json".target = "librewolf/policies/policies.json";
 }
