@@ -37,7 +37,8 @@ in
         in listToAttrs [
           (extension "ublock-origin" "uBlock0@raymondhill.net")
           (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
-        ];
+          (extension "privacy-badger17" "jid1-MnnxcxisBPnSXQ@jetpack")
+        ] // {"*".installation_mode = "blocked";};
     };
     preferences = {
       "cookiebanners.service.mode" = 2; # Block cookie banners
