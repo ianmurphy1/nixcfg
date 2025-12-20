@@ -10,14 +10,14 @@ let
   };
 in
 {
-  programs.firefox = {
-    enable = true;
-    preferences = {
-      "layout.css.devPixelsPerPx" = scales.${hostName};
-    } // lib.optionalAttrs (hostName == "titan") {
-      "font.name.monospace.x-western" = "SauceCodePro Nerd Font";
-      "font.size.monospace.x-western" = 14;
-      "font.minimum-size.x-western" = 14;
-    };
-  };
+  # programs.firefox = {
+  #   enable = false;
+  #   preferences = {
+  #     "layout.css.devPixelsPerPx" = scales.${hostName};
+  #   } // lib.optionalAttrs (hostName == "titan") {
+  #     "font.name.monospace.x-western" = "SauceCodePro Nerd Font";
+  #     "font.size.monospace.x-western" = 14;
+  #     "font.minimum-size.x-western" = 14;
+  #   };
+  # };
 }
