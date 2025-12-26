@@ -43,6 +43,7 @@ in
     };
   };
 
+  # Disable steam on nixos as not required
   programs.steam.enable = lib.mkForce false;
 
   users.users.${username} = {
