@@ -15,7 +15,6 @@
       inherit (texlive) scheme-full;
     })
     pgcli dig
-    nodePackages.cdktf-cli
     age-plugin-yubikey age
   ];
   services.pcscd.enable = true;

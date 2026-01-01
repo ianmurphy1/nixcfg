@@ -2,7 +2,7 @@
 { pkgs, ... }:
 let
   nodePkgs = with pkgs.nodePackages; [
-    aws-cdk
+    # aws-cdk
   ];
 
   unstablePkgs = with pkgs.unstable; [
