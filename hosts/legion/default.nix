@@ -121,9 +121,11 @@ in
       warn-dirty = false;
       substituters = [
         "https://ncps.home"
+        "https://cache.nixos.org"
       ];
       trusted-public-keys = [
-        "ncps.home:6qNYS6mjcO2Ef2VcmIEC7rX4ZMP91PL74oP2cO9JJcU="
+        "ncps.home:zlSfRlVSyH3gjGcHZXSyUqT8l2ffqzncwh/GSEpf5AY="
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
       extra-platforms = config.boot.binfmt.emulatedSystems;
     };
