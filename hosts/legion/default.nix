@@ -2,7 +2,7 @@
 
 let
   system = pkgs.stdenv.hostPlatform.system;
-  secretspath = builtins.toString inputs.mysecrets;
+  secretspath = toString inputs.mysecrets;
   username = myvars.username;
   user = config.users.users."${username}";
   usergroup = user.group;
