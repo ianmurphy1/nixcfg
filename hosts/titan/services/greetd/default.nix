@@ -1,13 +1,14 @@
 { pkgs, lib, ... }:
 let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
+  startCmd = "${pkgs.hyprland}/bin/start-hyprland";
 in
 {
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${tuigreet} --asterisks --time --remember --cmd Hyprland";
+        command = "${tuigreet} --asterisks --time --remember --cmd ${startCmd}";
         user = "greeter";
       };
     };
