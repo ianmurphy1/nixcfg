@@ -136,6 +136,12 @@ in
             allowUnfree = true;
           };
         };
+        fork = import inputs.nixpkgs-fork {
+          system = system;
+          config = {
+            allowUnfree = true;
+          };
+        };
       })
     ] ++ localOverlays;
     
