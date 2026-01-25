@@ -69,7 +69,7 @@ in
       ssh = "kitten ssh";
       rebuild = "nh os switch";
       update = "nix flake update --flake ${nixosConfig}/.#";
-      garbage = "nh clean all -k 5 -K 5d";
+      garbage = "sudo nh clean all -k 5 -K 5d";
       config = "cd ${nixosConfig}";
       myip = "curl https://am.i.mullvad.net/ip";
     };
