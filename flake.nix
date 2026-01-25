@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-fork.url = "git+https://github.com/ianmurphy1/nixpkgs?shallow=1&ref=main";
+    # nixpkgs-fork.url = "git+https://github.com/ianmurphy1/nixpkgs?shallow=1&ref=main";
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
