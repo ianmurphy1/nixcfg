@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, ... }:
 
 {
   boot = {
@@ -26,7 +26,7 @@
   hardware = {
     enableRedistributableFirmware = true;
     firmware = [
-      pkgs.linux-firmware
+      pkgs.unstable.linux-firmware
     ];
     bluetooth = {
       enable = true;
