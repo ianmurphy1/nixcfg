@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   programs.thunderbird = {
-    enable = true;
+    enable = false;
   };
   environment.systemPackages = with pkgs; [
-    thunderbird
+    # thunderbird
   ];
 }
