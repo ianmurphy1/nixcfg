@@ -4,9 +4,9 @@
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     # kernelPackages = pkgs.linuxPackages_testing;
-    kernelPackages = pkgs.unstable.linuxPackages_latest;
-    # kernelPackages = pkgs.linuxPackages_latest;
-    #kernelPackages = pkgs.linuxPackages_6_14;
+    # kernelPackages = pkgs.unstable.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_6_18;
     loader = {
       systemd-boot = {
         enable = true;
@@ -26,7 +26,8 @@
   hardware = {
     enableRedistributableFirmware = true;
     firmware = [
-      pkgs.unstable.linux-firmware
+      # pkgs.unstable.linux-firmware
+      pkgs.linux-firmware
     ];
     bluetooth = {
       enable = true;
