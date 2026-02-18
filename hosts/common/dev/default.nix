@@ -6,9 +6,9 @@ let
   ];
 
   unstablePkgs = with pkgs.unstable; [
-    argocd
     awscli2
     aws-sso-util
+    # argocd
   ];
 in
 {
@@ -28,7 +28,7 @@ in
     devenv just
     nixos-generators git-filter-repo
     # awscli2
-    # argocd
+    argocd
     kubectl
     kustomize
     kubernetes-helm
