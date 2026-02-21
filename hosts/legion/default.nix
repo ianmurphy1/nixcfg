@@ -149,10 +149,13 @@ in
         # };
       })
     ] ++ localOverlays;
-    
+
     config = {
       allowBroken = true;
-      allowUnfree = true; 
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "beekeeper-studio-5.5.5"
+      ];
     };
   };
 }
