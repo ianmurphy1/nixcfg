@@ -5,7 +5,7 @@
     powerManagement.finegrained = false;
     nvidiaSettings = true;
     open = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
   hardware.graphics.enable = true;
