@@ -1,3 +1,4 @@
-preload = ~/.config/hypr/share/space.png
-wallpaper = ,~/.config/hypr/share/space.png
-splash = false
+wallpaper {
+  monitor = 
+  path = ~/.config/hypr/share/space.png
+}

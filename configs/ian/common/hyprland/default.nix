@@ -43,9 +43,10 @@ in
     };
     ".config/hypr/hyprpaper.conf" = {
       text = ''
-        preload = ~/.config/hypr/share/${wallpaper."${hostname}"}
-        wallpaper = ,~/.config/hypr/share/${wallpaper."${hostname}"}
-        splash = false
+        wallpaper {
+          monitor =
+          path = ~/.config/hypr/share/legion_wp.jpg
+        }
       '';
     };
     ".config/hypr/hypridle.conf" = {
