@@ -16,6 +16,7 @@
     })
     pgcli dig
     age-plugin-yubikey age
+    inetutils
   ];
   services.pcscd.enable = true;
 }
