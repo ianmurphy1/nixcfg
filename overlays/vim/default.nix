@@ -25,6 +25,7 @@ let
     vim-devicons
     vim-python-pep8-indent
     ansible-vim
+    catppuccin-vim
   ];
 in
 {
