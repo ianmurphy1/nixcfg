@@ -94,7 +94,9 @@ set termguicolors
 colorscheme jellybeans
 let g:airline_theme='jellybeans'
 
+
 set fillchars=vert:│
+highlight VertSplit ctermfg=240 guifg=#555555 ctermbg=NONE guibg=NONE
 
 " let g:jellybeans_overrides = {
 " \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
