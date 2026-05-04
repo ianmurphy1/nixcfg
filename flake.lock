@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777679572,
-        "narHash": "sha256-egYNbRrkn+6SwTHinhdb6WUfzzdC3nXfCRqS321VylY=",
+        "lastModified": 1777913624,
+        "narHash": "sha256-4MwfrGuqjsnEORQbM3cmkmG/9cWhDV63dTDguDj4FXw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "9cb587ade2aa1b4a7257f0238d41072690b0ca4f",
+        "rev": "a89686d115e970e200eb2caa7603f3673050e00c",
         "type": "github"
       },
       "original": {
@@ -44,10 +44,10 @@
     "mysecrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1777482938,
-        "narHash": "sha256-+JYdVeS01YUzTzfGBfqBtQNGn1b6pg2QB+F5YSQmUzI=",
+        "lastModified": 1777796626,
+        "narHash": "sha256-0CBy9sTY4/Sa1yeRsA+/rWkfvfwMuxZSJ2N5gN3g2qA=",
         "ref": "main",
-        "rev": "3b7fea6442eefbaa1a329bc875b00234f8deeb68",
+        "rev": "fa4811d53de4eb99264c23e6624e47ad98926e44",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ianmurphy1/sops-secrets.git"
@@ -77,11 +77,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1777548390,
-        "narHash": "sha256-WacE23EbHTsBKvr8cu+1DFNbP6Rh1brHUH5SDUI0NQI=",
+        "lastModified": 1777826146,
+        "narHash": "sha256-wQ/iN5Zp5VIa3ebBibijPnLyKhor+xEbDy4d0goa9Zs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7aaa00e7cc9be6c316cb5f6617bd740dd435c59d",
+        "rev": "73c703c22422b8951895a960959dbbaca7296492",
         "type": "github"
       },
       "original": {
@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777700663,
-        "narHash": "sha256-+AePzs7q3VOrya1oFmw8x0BOvDMudA3+a9biWKuX8GY=",
+        "lastModified": 1777921965,
+        "narHash": "sha256-g8apmrS2Ty4pvionlFs8YsU/ddbTW7AbXDeE7ed0SBM=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "b006d7e864495863a8505c696c79c4eb52715370",
+        "rev": "c1ef7ab863e2808368b81bc90f548cb29016b958",
         "type": "github"
       },
       "original": {

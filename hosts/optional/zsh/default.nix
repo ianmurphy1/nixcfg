@@ -72,6 +72,8 @@ in
       garbage = "sudo nh clean all -k 5 -K 5d";
       config = "cd ${nixosConfig}";
       myip = "curl https://am.i.mullvad.net/ip";
+      genPass = "${lib.getExe pkgs.pwgen} --secure";
+      randpw = "< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c\${1:-16};echo;";
     };
     interactiveShellInit = ''
       # interactiveShellInit: START
@@ -95,7 +97,7 @@ in
       export TFE_TOKEN_app_terraform_io="$(cat ${config.sops.secrets.terraform_cloud_api_key.path})"
       export TFE_TOKEN="''${TFE_TOKEN_app_terraform_io}"
       export CLOUDFLARE_SECRET_KEY="$(cat ${config.sops.secrets.cloudflare_r2_api_token.path})"
-      export MANPAGER='bat -plman'
+      # export MANPAGER='bat -plman'
     '';
     ohMyZsh = {
       enable = true;
