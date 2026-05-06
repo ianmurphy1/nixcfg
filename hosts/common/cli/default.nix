@@ -17,7 +17,7 @@
     pgcli dig
     age-plugin-yubikey age
     inetutils
-    pwgen
+    randpass
   ] ++ (with pkgs.unstable; [
     man-pages
   ]);
