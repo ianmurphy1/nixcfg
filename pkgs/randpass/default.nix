@@ -8,7 +8,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   src = fetchGit {
     url = "git@github.com:ianmurphy1/randpass.git";
     ref = "main";
-    rev = "15a4482d883972674dac52e4762abe11caab17f3";
+    rev = "5ffef9089c83d9c997311f5c0c2614b569736db8";
   };
 
   cargoHash = "sha256-aL6PO5hXCRWNvl3c8/oOs8BqbQAb82Yf4ziQJcT42Yk=";
