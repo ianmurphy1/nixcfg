@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778144356,
-        "narHash": "sha256-dGM+QCstz/DyLB68+JK5GWyMx4QSqmOJEVgZmy63d/g=",
+        "lastModified": 1778248595,
+        "narHash": "sha256-dhFgEjoeJMYN/7OY6xfxS799YB4IjbbYXTjyGIJyLpc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e4419d3123b780d5f4c0bceeace450424387638c",
+        "rev": "fdb2ccba9d5e1238d32e0c4a3ec1a277efa80c1d",
         "type": "github"
       },
       "original": {
@@ -44,10 +44,10 @@
     "mysecrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1777796626,
-        "narHash": "sha256-0CBy9sTY4/Sa1yeRsA+/rWkfvfwMuxZSJ2N5gN3g2qA=",
+        "lastModified": 1778320655,
+        "narHash": "sha256-5MHl2aMMl3czzjyngGFdsROFqaqb2uiBhX7k+y+zK3I=",
         "ref": "main",
-        "rev": "fa4811d53de4eb99264c23e6624e47ad98926e44",
+        "rev": "d19c6752dcedbedf32da24d51f9e004d8bdb45f3",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ianmurphy1/sops-secrets.git"
@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778179956,
-        "narHash": "sha256-iH+mze/AtU1OkPVjg9gPpq0/L+2bx8E7UgQ0cEftP8Q=",
+        "lastModified": 1778334545,
+        "narHash": "sha256-yVHaHDRqlSX8veSUjZaXsPX3GD3+EF3Zap85hDVrt6M=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "29df34c7e79c5830df78876a7a839756ce40bc50",
+        "rev": "6f73c3738867b974b78aca91ed38560f03f77850",
         "type": "github"
       },
       "original": {
