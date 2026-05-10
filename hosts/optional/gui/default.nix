@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     tutanota-desktop
     beekeeper-studio
+    kvirc
   ];
 
   environment.etc = {
