@@ -27,6 +27,12 @@ in
     cloudflare_r2_api_token = {
       owner = "${config.users.users.ian.name}";
     };
+    seedhost_user = {
+      owner = "${config.users.users.ian.name}";
+    };
+    seedhost_url = {
+      owner = "${config.users.users.ian.name}";
+    };
   };
 
   system.userActivationScripts.zshrc = "touch .zshrc";
@@ -72,8 +78,6 @@ in
       garbage = "sudo nh clean all -k 5 -K 5d";
       config = "cd ${nixosConfig}";
       myip = "curl https://am.i.mullvad.net/ip";
-      genPass = "${lib.getExe pkgs.pwgen} --secure";
-      randpw = "< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c\${1:-16};echo;";
     };
     interactiveShellInit = ''
       # interactiveShellInit: START
@@ -89,6 +93,8 @@ in
       export AWS_DEFAULT_SSO_REGION=eu-west-1
       export AWS_DEFAULT_REGION=eu-west-1
       export AWS_PROFILE=sso
+      export SEEDHOST_USER="$(cat ${config.sops.secrets.seedhost_user.path})"
+      export SEEDHOST_URL="$(cat ${config.sops.secrets.seedhost_url.path})"
       export VAULT_TOKEN="$(cat ${config.sops.secrets.vault_token.path})"
       export ATTIC_TOKEN="$(cat ${config.sops.secrets.attic_token.path})"
       export CACHIX_TOKEN="$(cat ${config.sops.secrets.cachix_token.path})"
@@ -97,7 +103,6 @@ in
       export TFE_TOKEN_app_terraform_io="$(cat ${config.sops.secrets.terraform_cloud_api_key.path})"
       export TFE_TOKEN="''${TFE_TOKEN_app_terraform_io}"
       export CLOUDFLARE_SECRET_KEY="$(cat ${config.sops.secrets.cloudflare_r2_api_token.path})"
-      # export MANPAGER='bat -plman'
     '';
     ohMyZsh = {
       enable = true;

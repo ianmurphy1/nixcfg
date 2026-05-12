@@ -3,6 +3,7 @@
   (import ./vim)
   (import ./unseal-vault)
   (import ./randpass)
+  (import ./mirror)
   # (import ./python)
   # (import ./brlaser)
   # (import ./i3ipc)

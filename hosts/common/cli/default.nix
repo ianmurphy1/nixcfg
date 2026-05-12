@@ -18,6 +18,7 @@
     age-plugin-yubikey age
     inetutils
     randpass
+    mirror
   ] ++ (with pkgs.unstable; [
     man-pages
   ]);
