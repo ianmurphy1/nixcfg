@@ -121,7 +121,7 @@ in
         "https://cache.nixos.org"
       ];
       trusted-public-keys = [
-        "ncps.home:zlSfRlVSyH3gjGcHZXSyUqT8l2ffqzncwh/GSEpf5AY="
+        "ncps.home:fQGhQtLXsh03vvfeXpu/My29QcpjxC+de46oYqNwzKQ="
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
       extra-platforms = config.boot.binfmt.emulatedSystems;
@@ -151,7 +151,7 @@ in
       allowBroken = true;
       allowUnfree = true; 
       permittedInsecurePackages = [
-        "beekeeper-studio-5.6.2"
+        "beekeeper-studio-5.7.2"
       ];
     };
   };
