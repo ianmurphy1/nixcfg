@@ -120,7 +120,7 @@ in
         "https://cache.nixos.org"
       ];
       trusted-public-keys = [
-        "ncps.home:zlSfRlVSyH3gjGcHZXSyUqT8l2ffqzncwh/GSEpf5AY="
+        "ncps.home:fQGhQtLXsh03vvfeXpu/My29QcpjxC+de46oYqNwzKQ="
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
     };
