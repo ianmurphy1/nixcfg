@@ -191,6 +191,8 @@ nnoremap <silent> <C-n> :call NumberToggle()<CR>
 let g:go_gopls_enabled = 0
 " disable go fmt on save
 let g:go_fmt_autosave = 0
+" let g:go_debug=['shell-commands', 'lsp']
+let g:go_imports_autosave = 0
 
 source ~/.vim/nerdtree-icons.vim
 source ~/.vim/coc-settings.vim
