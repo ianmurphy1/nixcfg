@@ -4,6 +4,7 @@
   (import ./unseal-vault)
   (import ./randpass)
   (import ./mirror)
+  (import ./nh)
   # (import ./python)
   # (import ./brlaser)
   # (import ./i3ipc)
