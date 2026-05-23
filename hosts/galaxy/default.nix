@@ -1,7 +1,8 @@
 { config, pkgs, inputs, nur, lib, myvars, mylib, ...}:
 
 let
-  secretspath = builtins.toString inputs.mysecrets;
+  system = pkgs.stdenv.hostPlatform.system;
+  secretspath = toString inputs.mysecrets;
   username = myvars.username;
   user = config.users.users."${username}";
   usergroup = user.group;
@@ -110,20 +111,34 @@ in
       warn-dirty = false;
       substituters = [
         "https://ncps.home"
+        "https://cache.nixos.org"
       ];
       trusted-public-keys = [
-        "ncps.home:6qNYS6mjcO2Ef2VcmIEC7rX4ZMP91PL74oP2cO9JJcU="
+        "ncps.home:fQGhQtLXsh03vvfeXpu/My29QcpjxC+de46oYqNwzKQ="
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
     };
     optimise.automatic = true;
   };
 
   nixpkgs = {
-    overlays = localOverlays;
+    overlays = [
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          system = system;
+          config = {
+            allowUnfree = true;
+          };
+        };
+      })
+    ] ++ localOverlays;
     
     config = {
       allowBroken = true;
       allowUnfree = true; 
+      permittedInsecurePackages = [
+        "beekeeper-studio-5.7.2"
+      ];
     };
   };
 }
