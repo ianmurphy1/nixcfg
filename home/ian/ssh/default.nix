@@ -3,20 +3,16 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       "192.168.1.*" = {
-        host = "192.168.1.*";
-        identityFile = "~/.ssh/id_ed25519";
-        extraOptions = {
-          StrictHostKeyChecking = "accept-new";
-        };
+        Host = "192.168.1.*";
+        IdentityFile = "~/.ssh/id_ed25519";
+        StrictHostKeyChecking = "accept-new";
       };
       "*.home" = {
-        host = "*.home";
-        identityFile = "~/.ssh/id_ed25519";
-        extraOptions = {
-          StrictHostKeyChecking = "accept-new";
-        };
+        Host = "*.home";
+        IdentityFile = "~/.ssh/id_ed25519";
+        StrictHostKeyChecking = "accept-new";
       };
     };
   };
