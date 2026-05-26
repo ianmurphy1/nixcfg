@@ -20,5 +20,4 @@ rustPlatform.buildRustPackage (finalAttrs: {
       "ianm"
     ];
   };
-
 })
