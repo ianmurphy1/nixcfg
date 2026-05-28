@@ -17,6 +17,7 @@
     inetutils
     randpass
     mirror
+    yubikey-manager
   ] ++ (with pkgs.unstable; [
     man-pages
   ]);

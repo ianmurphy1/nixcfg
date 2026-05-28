@@ -4,6 +4,7 @@
     tutanota-desktop
     beekeeper-studio
     kvirc
+    yubioath-flutter
   ];
 
   environment.etc = {
