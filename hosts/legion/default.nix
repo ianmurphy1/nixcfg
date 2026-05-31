@@ -103,6 +103,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    # zen-browser-bin
     git
     zsh
     curl
@@ -110,7 +111,13 @@ in
     fprintd
     intel-media-driver
     egl-wayland
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    xwayland-satellite
   ];
+
+  programs.niri.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   nix = {
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];

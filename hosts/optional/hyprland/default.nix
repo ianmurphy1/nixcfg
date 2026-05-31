@@ -1,6 +1,10 @@
 # hyprland.nix
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
+let
+  hostName = config.networking.hostName;
+  enableHypr = hostName != "legion";
+in
 {
   # Enable Hyprland and install related pkgs
   # Configs in configs/ian/hyprland
@@ -10,7 +14,7 @@
   environment.sessionVariables.XCURSOR_THEME = "Breeze-Light";
   environment.sessionVariables.XCURSOR_SIZE = lib.mkDefault "26";
 
-  programs.hyprland = {
+  programs.hyprland = lib.mkIf enableHypr {
     enable = true;
     # make sure to also set the portal package, so that they are in sync
     portalPackage = pkgs.xdg-desktop-portal-hyprland;

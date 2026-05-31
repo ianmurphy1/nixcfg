@@ -8,4 +8,5 @@
   unseal-vault = pkgs.callPackage ./unseal-vault {};
   randpass = pkgs.callPackage ./randpass {};
   mirror = pkgs.callPackage ./mirror {};
+  zen-browser-bin = pkgs.callPackage ./zen-browser {};
 }

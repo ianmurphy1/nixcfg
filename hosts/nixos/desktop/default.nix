@@ -28,5 +28,6 @@
     xorg.xrdb
     kdePackages.partitionmanager
     kdePackages.xdg-desktop-portal-kde
+    xwayland-satellite
   ];
 }
