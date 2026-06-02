@@ -386,7 +386,7 @@
       # Styling for up-to-date Git status.
       local       meta='%246F'  # grey foreground
       # local      clean='%76F'   # green foreground
-      local      clean='%6F'   # green foreground
+      local      clean='%2F'   # green foreground
       # local   modified='%178F'  # yellow foreground
       local   modified='%11F'  # yellow foreground
       local  untracked='%39F'   # blue foreground
@@ -504,7 +504,7 @@
 
   # Icon color.
   # typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_COLOR=76
-  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_COLOR=6
+  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_COLOR=2
   typeset -g POWERLEVEL9K_VCS_LOADING_VISUAL_IDENTIFIER_COLOR=244
   # Custom icon.
   # typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION='⭐'
