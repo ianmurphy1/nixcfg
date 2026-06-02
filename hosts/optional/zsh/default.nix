@@ -119,8 +119,11 @@ in
     };
   };
 
+  # programs.starship.enable = true;
+
   environment.systemPackages = with pkgs; [
     unseal-vault # custom package, in pkgs dir
+    # starship
   ];
 
   environment.variables = {

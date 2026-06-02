@@ -2,7 +2,7 @@
 {
   scanPaths =
     path:
-    builtins.map (f: (path + "/${f}")) (
+    map (f: (path + "/${f}")) (
       builtins.attrNames (
         lib.attrsets.filterAttrs (
           path: _type:
@@ -18,7 +18,7 @@
     path,
     ext ? "nix",
   }:
-    builtins.map (f: (path + "/${f}")) (
+    map (f: (path + "/${f}")) (
       builtins.attrNames (
         lib.attrsets.filterAttrs (
           path: _type:
