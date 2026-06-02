@@ -35,7 +35,7 @@ in
         
         map ctrl+shift+d new_tab_with_cwd 
 
-        ${lib.optionalString (hostname == "legion") ''
+        ${lib.optionalString (hostname == "legion" || hostname == "titan") ''
         include /home/ian/.config/kitty/themes/jellybeans.conf
         ''}
       '';
