@@ -40,6 +40,7 @@ in
         ''}
       '';
     };
+
     ".config/kitty/themes/noctalia.conf" = lib.mkDefault {
       text = ''
         color0 #15161e
@@ -72,6 +73,7 @@ in
         cursor_trail_color      #9aa5ce
       '';
     };
+
     ".config/kitty/themes/jellybeans.conf" = {
       text = ''
         background #111111
