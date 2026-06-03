@@ -4,7 +4,10 @@ let
   enableNiri = (hostName == "legion" || hostName == "titan");
 in
 {
-  programs.niri.enable = enableNiri;
+  programs.niri = {
+    enable = enableNiri;
+    useNautilus = true;
+  };
 
   services.power-profiles-daemon.enable = enableNiri;
   services.upower.enable = enableNiri;
