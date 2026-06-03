@@ -236,16 +236,6 @@ in
         default-column-width {}
       }
       
-      // Open the Firefox picture-in-picture player as floating by default.
-      // window-rule {
-      // This app-id regular expression will work for both:
-      // - host Firefox (app-id is "firefox")
-      // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-      // match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-      // open-floating true
-      // }
-      
-      
       // workspace "" {
       // workspace "c" {
       // }
