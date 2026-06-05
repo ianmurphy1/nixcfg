@@ -34,7 +34,7 @@ in
           repeat-delay 200
           repeat-rate 30
           xkb {
-          ${lib.optionalString (hostname == "titan") ''
+          ${lib.optionalString (hostname != "legion") ''
             layout "gb"
           ''}
             // layout "gb"
@@ -71,7 +71,7 @@ in
       // Find more information on the wiki:
       // https://yalter.github.io/niri/Configuration:-Outputs
       // Remember to uncomment the node by removing "/-"!
-      ${lib.optionalString (hostname == "legion") ''
+      ${lib.optionalString (hostname == "legion" || hostname == "nixos") ''
         output "eDP-1" {
           // Uncomment this line to disable this output.
           // off
@@ -82,7 +82,11 @@ in
           // for the resolution.
           // If the mode is omitted altogether or is invalid, niri will pick one automatically.
           // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+          ${if (hostname == "legion") then ''
           mode "3200x2000@165"
+          '' else ''
+          mode "3200x2000@120"
+          ''}
         
           // You can use integer or fractional scale, for example use 1.5 for 150% scale.
           scale 1

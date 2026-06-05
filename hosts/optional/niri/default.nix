@@ -1,7 +1,7 @@
 { config, inputs, pkgs, ... }:
 let
   hostName = config.networking.hostName;
-  enableNiri = (hostName == "legion" || hostName == "titan");
+  enableNiri = (hostName == "legion" || hostName == "titan" || hostName == "nixos");
 in
 {
   programs.niri = {
