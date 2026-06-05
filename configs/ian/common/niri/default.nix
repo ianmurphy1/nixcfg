@@ -10,7 +10,7 @@ in
 
       environment {
         DISPLAY ":0"
-        GDK_BACKEND "wayland"
+        // GDK_BACKEND "wayland"
         QT_QPA_PLATFORMTHEME "qt6ct"
         QT_QPA_PLATFORM "wayland"
         XDG_CURRENT_DESKTOP "niri"
