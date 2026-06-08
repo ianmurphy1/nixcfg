@@ -26,6 +26,7 @@ let
     vim-python-pep8-indent
     ansible-vim
     catppuccin-vim
+    zig-vim
   ];
 in
 {

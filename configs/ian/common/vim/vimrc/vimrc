@@ -194,6 +194,10 @@ let g:go_fmt_autosave = 0
 " let g:go_debug=['shell-commands', 'lsp']
 let g:go_imports_autosave = 0
 
+" zig-vim settings
+"
+let g:zig_fmt_autosave = 0
+
 source ~/.vim/nerdtree-icons.vim
 source ~/.vim/coc-settings.vim
 "source ~/test.vim
