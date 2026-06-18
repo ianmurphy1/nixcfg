@@ -136,6 +136,10 @@ in
           system = system;
           config = {
             allowUnfree = true;
+            permittedInsecurePackages = [
+              "librewolf-151.0.2-1"
+              "librewolf-unwrapped-151.0.2-1"
+            ];
           };
         };
         fork = import inputs.nixpkgs-fork {
