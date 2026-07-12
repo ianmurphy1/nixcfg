@@ -5,7 +5,7 @@
     beekeeper-studio
     kvirc
     yubioath-flutter
-    lufus
+    woeusb
   ];
 
   environment.etc = {
