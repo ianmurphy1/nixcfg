@@ -157,7 +157,6 @@ in
       permittedInsecurePackages = [
         "beekeeper-studio-5.7.2"
         "librewolf-151.0.2-1"
-        "ventoy-1.1.12"
       ];
     };
   };
