@@ -18,17 +18,17 @@
       enable = true;
     };
   };
-  programs.hyprlock.enable = true;
+  programs.hyprlock.enable = (!config.programs.niri.enable);
 
   programs.xwayland.enable = true;
 
   environment.systemPackages = with pkgs; [
     dunst
-    hyprpaper
-    hyprcursor
-    hyprlock
-    hypridle
-    rofi #-wayland
+    # hyprpaper
+    # hyprcursor
+    # hyprlock
+    # hypridle
+    # rofi #-wayland
     qt5.qtwayland
     qt6.qtwayland
     waybar
