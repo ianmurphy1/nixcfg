@@ -6,7 +6,7 @@ in
 {
   programs.niri = {
     enable = enableNiri;
-    package = pkgs.unstable.niri;
+    # package = pkgs.unstable.niri;
     useNautilus = true;
   };
 
