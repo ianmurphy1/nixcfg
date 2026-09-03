@@ -11,7 +11,8 @@ let
 in
 {
   programs.firefox = {
-    package = pkgs.unstable.librewolf;
+    # package = pkgs.unstable.librewolf;
+    package = pkgs.librewolf;
     languagePacks = [
       "en-GB"
     ];
