@@ -136,6 +136,9 @@ in
   nixpkgs = {
     overlays = [
       (final: prev: {
+        buildGo125Module = prev.buildGoModule;
+      })
+      (final: prev: {
         unstable = import inputs.nixpkgs-unstable {
           system = system;
           config = {
