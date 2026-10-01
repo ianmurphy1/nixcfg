@@ -114,8 +114,9 @@ in
   ];
 
   nix = {
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    # nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     settings = {
+      nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "${username}" "@wheel" ];
       auto-optimise-store = true;
