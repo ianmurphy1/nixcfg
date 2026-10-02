@@ -109,8 +109,8 @@ in
   ];
 
   nix = {
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     settings = {
+      nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "${username}" "@wheel" ];
       auto-optimise-store = true;
@@ -143,7 +143,7 @@ in
       allowBroken = true;
       allowUnfree = true; 
       permittedInsecurePackages = [
-        "beekeeper-studio-5.5.5"
+        "beekeeper-studio-6.1.1"
       ];
     };
   };
