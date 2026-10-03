@@ -1,7 +1,7 @@
 { ... }:
 {
   home.file = {
-    "./config/noctalia" = {
+    ".config/noctalia" = {
       source = ./config;
       recursive = true;
     };
