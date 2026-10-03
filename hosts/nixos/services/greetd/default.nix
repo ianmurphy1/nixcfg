@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
-  startCmd = "${pkgs.hyprland}/bin/start-hyprland";
   niriSession = "${pkgs.niri}/bin/niri-session";
 in
 {

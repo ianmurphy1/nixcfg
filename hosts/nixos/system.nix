@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
   boot = {
@@ -15,6 +15,7 @@
   };
 
   hardware = {
+    enableRedistributableFirmware = true;
     firmware = [
       pkgs.linux-firmware
     ];
@@ -56,6 +57,6 @@
     earlySetup = true;
     keyMap = "uk";
   };
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "26.05"; # Did you read the comment?
   environment.systemPackages = [ pkgs.wireguard-tools ];
 }

@@ -6,7 +6,6 @@
     # kernelPackages = pkgs.linuxPackages_testing;
     # kernelPackages = pkgs.unstable.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages_latest;
-    # kernelPackages = pkgs.linuxPackages_6_18;
     loader = {
       systemd-boot = {
         enable = true;
