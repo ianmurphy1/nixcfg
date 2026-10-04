@@ -16,7 +16,7 @@ let
     vim-fugitive vim-just
     vim-nix vimtex
     vim-gitgutter vim-commentary
-    jellybeans-vim
+    jellybeans-vim vim-yaml
     vim-airline
     vim-airline-themes
     nerdtree vim-nerdtree-syntax-highlight
