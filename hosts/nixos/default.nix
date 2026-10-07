@@ -143,7 +143,7 @@ in
       allowBroken = true;
       allowUnfree = true; 
       permittedInsecurePackages = [
-        "beekeeper-studio-6.1.1"
+        "beekeeper-studio-6.1.4"
       ];
     };
   };
