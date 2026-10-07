@@ -5,7 +5,7 @@ let
     legion = "16";
     titan = "12";
     galaxy = "15";
-    nixos = "12";
+    nixos = "16";
     nixvirt = "16";
   };
 in
