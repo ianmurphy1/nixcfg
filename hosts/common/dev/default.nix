@@ -36,7 +36,7 @@ in
     ipcalc
     act
     gopls
-    postgresql
+    postgresql_18
     gh
     opentofu
     terraform
