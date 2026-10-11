@@ -52,6 +52,7 @@ in
       "privacy.trackingprotection.socialtracking.enabled" = true;
       "layout.css.devPixelsPerPx" = scales.${hostName};
       "font.name.monospace.x-western" = "SauceCodePro Nerd Font";
+      "identity.sync.tokenserver.uri" = "https://syncserver.i-murphy.ie/1.0/sync/1.5";
     } // lib.optionalAttrs (hostName == "titan") {
       "font.size.monospace.x-western" = 14;
       "font.minimum-size.x-western" = 14;
