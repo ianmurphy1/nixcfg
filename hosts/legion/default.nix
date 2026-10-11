@@ -57,7 +57,10 @@ in
         "audio"
         "video"
         "input"
-      ] ++ lib.optionals dockerEnabled [ "docker" ];
+      ] ++ lib.optionals dockerEnabled [
+        "docker"
+      ];
+
     shell = pkgs.zsh;
     openssh = {
       authorizedKeys = {
