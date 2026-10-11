@@ -1,7 +1,7 @@
 set -xe
 IP=${IP?undefined}
 APP=${APP?undefined}
-SECRETS_DIR="/home/ian/dev/secrets/sops"
+SECRETS_DIR="/home/ian/dev/secrets/sops-secrets"
 
 # Remove existing SSH key from known_hosts file
 # SSH config is setup to accept new keys from
