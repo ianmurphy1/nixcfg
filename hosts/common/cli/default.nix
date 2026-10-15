@@ -16,7 +16,7 @@
     age-plugin-yubikey age
     inetutils
     randpass
-    mirror
+    mirror ovhcloud-cli
     yubikey-manager
   ] ++ (with pkgs.unstable; [
     man-pages
