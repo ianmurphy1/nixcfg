@@ -7,6 +7,7 @@ let
 
   unstablePkgs = with pkgs.unstable; [
     awscli2
+    ssm-session-manager-plugin
     aws-sso-util
     # argocd
   ];

@@ -14,6 +14,11 @@
         IdentityFile = "~/.ssh/id_ed25519";
         StrictHostKeyChecking = "accept-new";
       };
+      "i-*" = {
+        ProxyCommand = ''
+          sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
+        '';
+      };
     };
   };
 }
