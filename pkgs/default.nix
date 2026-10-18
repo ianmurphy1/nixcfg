@@ -9,4 +9,5 @@
   randpass = pkgs.callPackage ./randpass {};
   mirror = pkgs.callPackage ./mirror {};
   zen-browser-bin = pkgs.callPackage ./zen-browser {};
+  ssh-ssm = pkgs.callPackage ./ssh-ssm {};
 }

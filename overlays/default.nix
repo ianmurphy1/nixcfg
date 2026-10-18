@@ -6,6 +6,7 @@
   (import ./mirror)
   (import ./nh)
   (import ./zen-browser)
+  (import ./ssh-ssm)
   # (import ./python)
   # (import ./brlaser)
   # (import ./i3ipc)

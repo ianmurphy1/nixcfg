@@ -18,6 +18,7 @@
     randpass
     mirror ovhcloud-cli
     yubikey-manager
+    ssh-ssm
   ] ++ (with pkgs.unstable; [
     man-pages
   ]);

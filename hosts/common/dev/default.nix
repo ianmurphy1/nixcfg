@@ -39,10 +39,9 @@ in
     gopls
     postgresql_18
     gh
-    opentofu
     terraform
-    pulumi
-    pulumiPackages.pulumi-nodejs
+    # pulumi
+    # pulumiPackages.pulumi-nodejs
   ] ++ nodePkgs
     ++ unstablePkgs;
 }

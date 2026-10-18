@@ -15,9 +15,10 @@
         StrictHostKeyChecking = "accept-new";
       };
       "i-*" = {
-        ProxyCommand = ''
-          sh -c "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
-        '';
+        ProxyCommand = "ssh-ssm %h %r";
+        IdentityFile = "~/.ssh/ssm-ssh-tmp";
+        StrictHostKeyChecking = "no";
+        BatchMode = "yes";
       };
     };
   };
