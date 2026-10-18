@@ -57,6 +57,9 @@
         titan = mkSystem "titan" {
           system = "x86_64-linux";
         };
+        cerberus = mkSystem "cerberus" {
+          system = "x86_64-linux";
+        };
       };
       darwinConfigurations = {
         nixdarwin = mkSystem "nixdarwin" {

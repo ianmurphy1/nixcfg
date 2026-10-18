@@ -15,11 +15,6 @@
         canTouchEfiVariables = true;
       };
     };
-    # Removing lenovo-legion-module until builds on >= 6.14 kernel get fixed
-    #extraModulePackages = [ config.boot.kernelPackages.lenovo-legion-module ];
-    kernelParams = [
-      "splash"
-    ];
   };
 
   hardware = {
@@ -28,24 +23,6 @@
       # pkgs.unstable.linux-firmware
       pkgs.linux-firmware
     ];
-    bluetooth = {
-      enable = true;
-      powerOnBoot = false;
-      settings = {
-        General = {
-          Experimental = true;
-          FastConnectable = true;
-        };
-        Policy = {
-          AutoEnable = true;
-        };
-      };
-      input = {
-        General = {
-          UserspaceHID = true;
-        };
-      };
-    };
   };
   
 
