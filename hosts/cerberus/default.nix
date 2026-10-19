@@ -18,16 +18,13 @@ let
 in
 {
   imports = lib.flatten [
-    # ./intel
-    # ./nvidia
-    # ./services
     ./hardware-configuration.nix
     ./system.nix
     ./ec2.nix
     ../common
     ../optional/zsh
     ../optional/nh
-    # (mylib.scanPathsExt { path = ../optional; })
+
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
   ];
@@ -45,6 +42,14 @@ in
       };
       vault_unseal_keys = {
         owner = "${username}";
+      };
+      private_ssh_key = {
+        owner = username;
+        path = "${homedir}/.ssh/id_ed25519";
+      };
+      public_ssh_key = {
+        owner = username;
+        path = "${homedir}/.ssh/id_ed25519.pub";
       };
     };
   };
@@ -121,7 +126,6 @@ in
   ];
 
   nix = {
-    # nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     settings = {
       nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
       experimental-features = [ "nix-command" "flakes" ];
