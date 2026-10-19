@@ -41,7 +41,6 @@ in
     secrets = {
       user_pass = {
         neededForUsers = true;
-        key = "‹name›";
       };
       vault_unseal_keys = {
         owner = "${username}";
