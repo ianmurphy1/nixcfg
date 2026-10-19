@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   boot = {
@@ -6,14 +6,19 @@
     # kernelPackages = pkgs.linuxPackages_testing;
     # kernelPackages = pkgs.unstable.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages_latest;
+    growPartition = true;
     loader = {
-      systemd-boot = {
-        enable = false;
-        configurationLimit = 5;
-      };
+      timeout = 1;
       grub = {
         enable = true;
-        device = "/dev/nvme0n1";
+        device = lib.mkDefault "/dev/nvme0n1";
+        efiSupport = false;
+        efiInstallAsRemovable = false;
+        extraConfig = ''
+          serial --unit=0 --speed=115200 --word=8 --parity=no --stop=1
+          terminal_output console serial
+          terminal_input console serial
+        '';
       };
     };
     # Removing lenovo-legion-module until builds on >= 6.14 kernel get fixed
@@ -34,6 +39,7 @@
 
   networking = {
     networkmanager.enable = true;
+    timeServers = ["169.254.169.123"];
   };
 
   time.timeZone = "Europe/Dublin";

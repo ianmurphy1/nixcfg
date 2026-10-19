@@ -31,7 +31,9 @@ in
 
   sops = {
     age = {
-      sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+      sshKeyPaths = [
+        "/etc/ssh/ssh_host_ed25519_key"
+      ];
       generateKey = true;
       keyFile = "${homedir}/.config/sops/age/keys.txt";
     };
@@ -39,6 +41,7 @@ in
     secrets = {
       user_pass = {
         neededForUsers = true;
+        key = "‹name›";
       };
       vault_unseal_keys = {
         owner = "${username}";

@@ -2,6 +2,13 @@
 { pkgs, ... }:
 {
   services.amazon-ssm-agent.enable = true;
+  services.openssh.enable = true;
+  services.openssh.settings.PermitRootLogin = "prohibit-password";
+  services.udev.packages = [ pkgs.amazon-ec2-utils ];
+  services.udisks2.enable = false;
+
+  # Enable the serial console on ttyS0
+  systemd.services."serial-getty@ttyS0".enable = true;
 
   environment.systemPackages = with pkgs; [
     amazon-ssm-agent
@@ -31,5 +38,6 @@
     aws-checksums
     aws-checksums
     aws-c-cal
+    cryptsetup
   ];
 }
