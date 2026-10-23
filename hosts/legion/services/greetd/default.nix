@@ -31,7 +31,7 @@ in
       session.default = "niri";
       user.default = "ian";
       auth = {
-        allow_empty_password = true;
+        allow_empty_password = false;
       };
       appearance = {
         scheme = "Synced";
