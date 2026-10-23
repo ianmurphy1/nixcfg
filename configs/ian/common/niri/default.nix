@@ -190,7 +190,7 @@ in
       spawn-sh-at-startup "~/.config/hypr/scripts/xdg-portal-init"
       spawn-at-startup "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       spawn-at-startup "dbus-update-activation-environment --systemd --all"
-      spawn-at-startup "noctalia-shell"
+      spawn-at-startup "noctalia"
       
       // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
       // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -286,10 +286,10 @@ in
       }
       
       // Set the overview wallpaper on the backdrop.
-      layer-rule {
-        match namespace="^noctalia-overview*"
-        place-within-backdrop true
-      }
+      //layer-rule {
+      //  match namespace="^noctalia-wallpaper"
+      //  place-within-backdrop true
+      //}
       
       binds {
         // `niri msg action do-something`.
@@ -303,8 +303,8 @@ in
         Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
       
         //noctalia keybinds
-        Mod+Space { spawn-sh "noctalia-shell ipc call launcher toggle"; }
-        Mod+S { spawn-sh "noctalia-shell ipc call settings toggle"; }
+        Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
+        Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
       
         // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
         // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -555,7 +555,7 @@ in
       
       switch-events {
         lid-close {
-          spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"
+          spawn "noctalia" "msg" "session" "lock-and-suspend";
         }
       }
       
