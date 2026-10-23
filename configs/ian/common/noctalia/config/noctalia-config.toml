@@ -252,7 +252,7 @@ up = [ "Up" ]
 validate = [ "Return", "KP_Enter", "space" ]
 
 [location]
-address = ""
+address = "Waterford, Ireland"
 auto_locate = false
 custom_schedule = false
 sunrise = ""
@@ -269,8 +269,8 @@ grace_period_seconds = 0
 lock_before_suspend = true
 monitors = []
 tint_intensity = 0.30000001192092896
-transition = [ "fade", "wipe", "disc", "stripes", "zoom", "honeycomb", "vortex", "pixel", "diamond", "golden", "melt" ]
-transition_duration = 1500.0
+transition = [ "fade" ]
+transition_duration = 500.0
 wallpaper = ""
 
 [lockscreen_widgets]
@@ -414,7 +414,7 @@ niri_overview_close_on_launch_enabled = false
 niri_overview_type_to_launch_enabled = false
 offline_mode = false
 password_style = "default"
-polkit_agent = false
+polkit_agent = true
 popup_borders = true
 popup_shadows = true
 readline_shortcuts = false
