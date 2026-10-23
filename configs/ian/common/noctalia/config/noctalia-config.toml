@@ -38,7 +38,7 @@ order = [ "default" ]
     concave_edge_corners = true
     contact_shadow = false
     enabled = true
-    end = [ "media", "tray", "notifications", "clipboard", "volume", "brightness", "battery", "control-center", "session" ]
+    end = [ "media", "tray", "notifications", "clipboard", "volume", "brightness", "battery", "control-center", "group:g1" ]
     font_scale = 1.0
     font_weight = 500
     hover_highlight = true
@@ -60,11 +60,33 @@ order = [ "default" ]
     show_on_workspace_switch = true
     show_tooltip = true
     smart_auto_hide = false
-    start = [ "launcher", "clock", "temp", "cpu", "ram", "network", "spacer_2", "active_window" ]
+    start = [ "launcher", "group:g2", "network", "spacer_2", "active_window" ]
     thickness = 34
     widget_spacing = 6
 
         [bar.default.dead_zone]
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        border_width = 1.0
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "clock", "date" ]
+        opacity = 1.0
+        padding = 6.0
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        border_width = 1.0
+        enabled = true
+        fill = "surface_variant"
+        id = "g2"
+        members = [ "temp", "cpu", "ram" ]
+        opacity = 1.0
+        padding = 6.0
 
 [battery]
 warning_threshold = 10
@@ -731,6 +753,10 @@ min_length = 80.0
 title_scroll = "none"
 type = "media"
 
+[widget.network]
+capsule = true
+type = "network"
+
 [widget.network_rx]
 stat = "net_rx"
 type = "sysmon"
@@ -753,6 +779,7 @@ type = "spacer"
 
 [widget.spacer_2]
 interactive = false
+length = 10
 type = "spacer"
 
 [widget.temp]
