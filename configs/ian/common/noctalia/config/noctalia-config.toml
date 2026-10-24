@@ -719,6 +719,9 @@ enabled = true
 refresh_minutes = 30
 unit = "metric"
 
+[widget.workspaces]
+capsule = false
+
 [widget.active_window]
 capsule = true
 capsule_padding = 15
