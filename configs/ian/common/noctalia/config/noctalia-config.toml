@@ -38,7 +38,7 @@ order = [ "default" ]
     concave_edge_corners = true
     contact_shadow = false
     enabled = true
-    end = [ "media", "tray", "notifications", "clipboard", "volume", "brightness", "battery", "control-center", "group:g1" ]
+    end = [ "media", "tray", "notifications", "clipboard", "input-volume", "output-volume", "brightness", "battery", "group:g1" ]
     font_scale = 1.0
     font_weight = 500
     hover_highlight = true
@@ -737,6 +737,7 @@ format = "{:%a %d %b}"
 type = "clock"
 
 [widget.input_volume]
+capsule = true
 device = "input"
 type = "volume"
 
@@ -745,10 +746,12 @@ hide_when_single_layout = false
 type = "keyboard_layout"
 
 [widget.launcher]
-glyph = "cube"
+capsule = true
+glyph = "rocket"
 type = "launcher"
 
 [widget.lock_keys]
+capsule = true
 display = "short"
 hide_when_off = false
 show_caps_lock = true
@@ -776,10 +779,6 @@ type = "sysmon"
 stat = "net_tx"
 type = "sysmon"
 
-[widget.output_volume]
-device = "output"
-type = "volume"
-
 [widget.ram]
 stat = "ram_used"
 type = "sysmon"
@@ -798,5 +797,40 @@ stat = "cpu_temp"
 type = "sysmon"
 
 [widget.volume]
+capsule = true
+device = "output"   # output | input
+show_glyph = true
+glyph = ""          # custom active glyph; empty = built-in dynamic icons
+mute_glyph = ""     # custom mute/0% glyph; empty = built-in mute icon
 show_label = false
+mute_color = "error"
+
+[widget.input-volume]
+capsule = true
 type = "volume"
+device = "input"
+hide_when_inactive = true   # input only: hide when no app is capturing audio
+
+[widget.output-volume]
+capsule = true
+type = "volume"
+device = "output"
+
+[widget.brightness]
+capsule = true
+show_label = true
+type = "brightness"
+
+[widget.battery]
+capsule = true
+type = "battery"
+
+[widget.notifications]
+capsule = true
+show_label = false
+type = "notifications"
+
+[widget.clipboard]
+capsule = true
+show_label = false
+type = "clipboard"
