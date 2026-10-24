@@ -721,6 +721,12 @@ unit = "metric"
 
 [widget.workspaces]
 capsule = false
+style = "focus_hint"
+show_labels = false
+show_icons = true
+active_pill_size = 2.2
+inactive_pill_size = 1.0
+pill_scale = 1.0
 
 [widget.active_window]
 capsule = true
