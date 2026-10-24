@@ -77,13 +77,24 @@ order = [ "default" ]
         opacity = 1.0
         padding = 6.0
 
+        # [[bar.default.capsule_group]]
+        # accordion = false
+        # accordion_direction = "end"
+        # border_width = 1.0
+        # enabled = true
+        # fill = "surface_variant"
+        # id = "g2"
+        # members = [ "temp", "cpu", "ram" ]
+        # opacity = 1.0
+        # padding = 6.0
+
         [[bar.default.capsule_group]]
         accordion = false
         accordion_direction = "end"
         border_width = 1.0
         enabled = true
         fill = "surface_variant"
-        id = "g2"
+        id = "g3"
         members = [ "temp", "cpu", "ram" ]
         opacity = 1.0
         padding = 6.0
