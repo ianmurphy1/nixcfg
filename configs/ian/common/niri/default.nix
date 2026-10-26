@@ -14,8 +14,9 @@ in
         QT_QPA_PLATFORMTHEME "qt6ct"
         QT_QPA_PLATFORM "wayland"
         XDG_CURRENT_DESKTOP "niri"
+
         XDG_SESSION_TYPE "wayland"
-        XDG_SESSION_DESKTOP "niri"
+        // XDG_SESSION_DESKTOP "niri"
         MOZ_ENABLE_WAYLAND "1"
         MOZ_DBUS_REMOTE "1"
       
@@ -187,9 +188,9 @@ in
       }
       
       // This line starts waybar, a commonly used bar for Wayland compositors.
-      spawn-sh-at-startup "~/.config/hypr/scripts/xdg-portal-init"
+      //spawn-sh-at-startup "~/.config/hypr/scripts/xdg-portal-init"
       spawn-at-startup "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-      spawn-at-startup "dbus-update-activation-environment --systemd --all"
+      //spawn-at-startup "dbus-update-activation-environment --systemd --all"
       spawn-at-startup "noctalia"
       
       // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
