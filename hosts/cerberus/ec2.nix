@@ -36,7 +36,6 @@
     aws-c-http
     aws-c-io
     aws-checksums
-    aws-checksums
     aws-c-cal
     cryptsetup
   ];
