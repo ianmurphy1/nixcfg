@@ -22,21 +22,11 @@
     aws-c-compression
     aws-c-io
     aws-c-cal
-    aws-c-auth
     aws-c-event-stream
     aws-crt-cpp
-    aws-crt-cpp
-    aws-c-mqtt
     aws-c-s3
     aws-c-common
-    aws-c-event-stream
-    aws-c-s3
-    aws-c-common
-    aws-c-sdkutils
-    aws-c-http
-    aws-c-io
     aws-checksums
-    aws-c-cal
     cryptsetup
   ];
 }
