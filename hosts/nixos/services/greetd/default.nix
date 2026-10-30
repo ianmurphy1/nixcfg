@@ -37,4 +37,5 @@ in
       name = "Bibata-Modern-Ice";
     };
     passwordlessSyncUsers = [ "ian" ];
+  };
 }
