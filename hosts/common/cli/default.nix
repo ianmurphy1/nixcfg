@@ -19,6 +19,7 @@
     mirror ovhcloud-cli
     yubikey-manager
     ssh-ssm
+    cloudflared
   ] ++ (with pkgs.unstable; [
     man-pages
   ]);
