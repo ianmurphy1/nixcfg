@@ -24,6 +24,9 @@ in
     terraform_cloud_api_key = {
       owner = "${config.users.users.ian.name}";
     };
+    cloudflare_api_token = {
+      owner = "${config.users.users.ian.name}";
+    };
     cloudflare_r2_api_token = {
       owner = "${config.users.users.ian.name}";
     };
@@ -107,6 +110,7 @@ in
       export TFE_TOKEN="''${TFE_TOKEN_app_terraform_io}"
       export CLOUDFLARE_SECRET_KEY="$(cat ${config.sops.secrets.cloudflare_r2_api_token.path})"
       export CLOUDFLARE_DNS_SECRET_KEY="$(cat ${config.sops.secrets.cloudflare_dns_token.path})"
+      export CLOUDFLARE_API_TOKEN="$(cat ${config.sops.secrets.cloudflare_api_token.path})"
     '';
     ohMyZsh = {
       enable = true;
