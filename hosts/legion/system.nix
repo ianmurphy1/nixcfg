@@ -4,8 +4,7 @@
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     # kernelPackages = pkgs.linuxPackages_testing;
-    # kernelPackages = pkgs.unstable.linuxPackages_latest;
-    kernelPackages = pkgs.linuxPackages_7_2;
+    kernelPackages = pkgs.unstable.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = true;
