@@ -74,7 +74,7 @@ in
     syntaxHighlighting.enable = true;
     promptInit = ''
       # promptInit: START
-      [[ "$${DISPLAY}" ]] || [[ "$${WAYLAND_DISPLAY}" ]] && { [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh }
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       # promptInit: END
     '';
     shellAliases = {
@@ -87,9 +87,7 @@ in
     };
     interactiveShellInit = ''
       # interactiveShellInit: START
-      [[ "$${DISPLAY}" ]] || [[ "$${WAYLAND_DISPLAY}" ]] && {
-        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
-      }
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
       source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
       source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
       source <(${lib.getExe pkgs.sops} completion zsh)
