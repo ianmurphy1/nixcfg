@@ -21,6 +21,7 @@
     ssh-ssm
     cloudflared
     miller
+    parallel
   ] ++ (with pkgs.unstable; [
     man-pages
   ]);
