@@ -20,6 +20,7 @@
     yubikey-manager
     ssh-ssm
     cloudflared
+    miller
   ] ++ (with pkgs.unstable; [
     man-pages
   ]);
