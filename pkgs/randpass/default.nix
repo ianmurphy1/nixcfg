@@ -6,7 +6,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   version = "0.0.1";
 
   src = fetchGit {
-    url = "git@github.com:ianmurphy1/randpass.git";
+    url = "ssh://git@github.com/ianmurphy1/randpass.git";
     ref = "main";
     rev = "49f5a7404c304a1f3d6f32475a0c5c54e87b197f";
   };
