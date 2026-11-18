@@ -4,7 +4,7 @@
   (import ./unseal-vault)
   (import ./randpass)
   (import ./mirror)
-  (import ./nh)
+  # (import ./nh)
   (import ./zen-browser)
   (import ./ssh-ssm)
   # (import ./python)
