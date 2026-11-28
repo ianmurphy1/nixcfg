@@ -12,7 +12,7 @@ in
 
   home = {
     username = "${myvars.username}";
-    stateVersion = lib.mkDefault "25.05";
+    stateVersion = lib.mkDefault "26.11";
   };
   programs.home-manager.enable = true;
 }
